@@ -7,4 +7,4 @@ Name: libstm32f10x
 Description: STM32F10x support library
 Version: @VERSION@
 Cflags: -I@includedir@/stm32/f10x/ -I@includedir@/stm32/CMSIS/
-Libs: -L@libdir@ -lstm32f10x
+Libs: -L@libdir@ -lstm32f10x 

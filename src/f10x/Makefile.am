@@ -26,7 +26,11 @@ stm32f10x_wwdg.h
 
 lib_LTLIBRARIES=libstm32f10x.la 
 
-libstm32f10x_la_SOURCES=init.c \
+#FIXME: have to pick the right startup file based on density!
+libstm32f10x_la_SOURCES=\
+startup_stm32f10x_md.S\
+system_stm32f10x.c \
+init.c \
 stm32f10x_misc.c \
 stm32f10x_adc.c \
 stm32f10x_bkp.c \
