@@ -1,6 +1,6 @@
 includedir=$(prefix)/include/stm32/f10x/
 include_HEADERS=\
-misc.h \
+stm32f10x_misc.h \
 stm32f10x_adc.h \
 stm32f10x_bkp.h \
 stm32f10x_can.h \
@@ -27,7 +27,7 @@ stm32f10x_wwdg.h
 lib_LTLIBRARIES=libstm32f10x.la 
 
 libstm32f10x_la_SOURCES=init.c \
-misc.c \
+stm32f10x_misc.c \
 stm32f10x_adc.c \
 stm32f10x_bkp.c \
 stm32f10x_can.c \
