@@ -13,8 +13,6 @@
 # PARTICULAR PURPOSE.
 
 @SET_MAKE@
-
-
 VPATH = @srcdir@
 am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'
 am__make_running_with_option = \
@@ -80,8 +78,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 subdir = src
-DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
-	$(top_srcdir)/config/depcomp $(include_HEADERS)
+DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_code_coverage.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -92,167 +89,6 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
-am__vpath_adj = case $$p in \
-    $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
-    *) f=$$p;; \
-  esac;
-am__strip_dir = f=`echo $$p | sed -e 's|^.*/||'`;
-am__install_max = 40
-am__nobase_strip_setup = \
-  srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*|]/\\\\&/g'`
-am__nobase_strip = \
-  for p in $$list; do echo "$$p"; done | sed -e "s|$$srcdirstrip/||"
-am__nobase_list = $(am__nobase_strip_setup); \
-  for p in $$list; do echo "$$p $$p"; done | \
-  sed "s| $$srcdirstrip/| |;"' / .*\//!s/ .*/ ./; s,\( .*\)/[^/]*$$,\1,' | \
-  $(AWK) 'BEGIN { files["."] = "" } { files[$$2] = files[$$2] " " $$1; \
-    if (++n[$$2] == $(am__install_max)) \
-      { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } \
-    END { for (dir in files) print dir, files[dir] }'
-am__base_list = \
-  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
-  sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
-am__uninstall_files_from_dir = { \
-  test -z "$$files" \
-    || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } \
-    || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
-         $(am__cd) "$$dir" && rm -f $$files; }; \
-  }
-am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"
-LTLIBRARIES = $(lib_LTLIBRARIES)
-libk_arm32_stm32f10x_la_LIBADD =
-am__dirstamp = $(am__leading_dot)dirstamp
-am_libk_arm32_stm32f10x_la_OBJECTS =  \
-	f10x/libk_arm32_stm32f10x_la-init.lo \
-	f10x/libk_arm32_stm32f10x_la-misc.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_adc.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_bkp.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_can.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_cec.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_crc.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_dac.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_dma.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_exti.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_flash.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_fsmc.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_gpio.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_i2c.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_iwdg.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_pwr.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_rcc.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_rtc.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_sdio.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_spi.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_tim.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_usart.lo \
-	f10x/libk_arm32_stm32f10x_la-stm32f10x_wwdg.lo
-libk_arm32_stm32f10x_la_OBJECTS =  \
-	$(am_libk_arm32_stm32f10x_la_OBJECTS)
-AM_V_lt = $(am__v_lt_@AM_V@)
-am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-am__v_lt_0 = --silent
-am__v_lt_1 = 
-libk_arm32_stm32f10x_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-	$(LDFLAGS) -o $@
-libk_arm32_stm32f30x_la_LIBADD =
-am_libk_arm32_stm32f30x_la_OBJECTS =  \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_adc.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_can.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_comp.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_crc.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_dac.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_dma.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_exti.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_flash.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_gpio.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_i2c.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_iwdg.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_misc.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_opamp.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_pwr.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_rcc.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_rtc.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_spi.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_syscfg.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_tim.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_usart.lo \
-	f30x/libk_arm32_stm32f30x_la-stm32f30x_wwdg.lo
-libk_arm32_stm32f30x_la_OBJECTS =  \
-	$(am_libk_arm32_stm32f30x_la_OBJECTS)
-libk_arm32_stm32f30x_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-	$(LDFLAGS) -o $@
-libk_arm32_stm32f37x_la_LIBADD =
-am_libk_arm32_stm32f37x_la_OBJECTS =  \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_adc.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_can.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_cec.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_comp.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_crc.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_dac.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_dma.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_exti.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_flash.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_gpio.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_i2c.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_iwdg.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_misc.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_pwr.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_rcc.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_rtc.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_sdadc.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_spi.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_syscfg.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_tim.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_usart.lo \
-	f37x/libk_arm32_stm32f37x_la-stm32f37x_wwdg.lo
-libk_arm32_stm32f37x_la_OBJECTS =  \
-	$(am_libk_arm32_stm32f37x_la_OBJECTS)
-libk_arm32_stm32f37x_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-	$(LDFLAGS) -o $@
-libk_arm32_stm32l1xx_la_LIBADD =
-am_libk_arm32_stm32l1xx_la_OBJECTS =  \
-	l1xx/libk_arm32_stm32l1xx_la-misc.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_adc.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_comp.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_crc.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dac.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dma.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_exti.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_flash.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_spi.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_tim.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_usart.lo \
-	l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.lo
-libk_arm32_stm32l1xx_la_OBJECTS =  \
-	$(am_libk_arm32_stm32l1xx_la_OBJECTS)
-libk_arm32_stm32l1xx_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -265,42 +101,29 @@ AM_V_at = $(am__v_at_@AM_V@)
 am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
 am__v_at_1 = 
-DEFAULT_INCLUDES = -I.@am__isrc@
-depcomp = $(SHELL) $(top_srcdir)/config/depcomp
-am__depfiles_maybe = depfiles
-am__mv = mv -f
-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
-	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
-	$(AM_CFLAGS) $(CFLAGS)
-AM_V_CC = $(am__v_CC_@AM_V@)
-am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
-am__v_CC_0 = @echo "  CC      " $@;
-am__v_CC_1 = 
-CCLD = $(CC)
-LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-AM_V_CCLD = $(am__v_CCLD_@AM_V@)
-am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
-am__v_CCLD_0 = @echo "  CCLD    " $@;
-am__v_CCLD_1 = 
-SOURCES = $(libk_arm32_stm32f10x_la_SOURCES) \
-	$(libk_arm32_stm32f30x_la_SOURCES) \
-	$(libk_arm32_stm32f37x_la_SOURCES) \
-	$(libk_arm32_stm32l1xx_la_SOURCES)
-DIST_SOURCES = $(libk_arm32_stm32f10x_la_SOURCES) \
-	$(libk_arm32_stm32f30x_la_SOURCES) \
-	$(libk_arm32_stm32f37x_la_SOURCES) \
-	$(libk_arm32_stm32l1xx_la_SOURCES)
+SOURCES =
+DIST_SOURCES =
+RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+	ctags-recursive dvi-recursive html-recursive info-recursive \
+	install-data-recursive install-dvi-recursive \
+	install-exec-recursive install-html-recursive \
+	install-info-recursive install-pdf-recursive \
+	install-ps-recursive install-recursive installcheck-recursive \
+	installdirs-recursive pdf-recursive ps-recursive \
+	tags-recursive uninstall-recursive
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-HEADERS = $(include_HEADERS)
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+  distclean-recursive maintainer-clean-recursive
+am__recursive_targets = \
+  $(RECURSIVE_TARGETS) \
+  $(RECURSIVE_CLEAN_TARGETS) \
+  $(am__extra_recursive_targets)
+AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \
+	distdir
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -320,7 +143,33 @@ am__define_uniq_tagged_files = \
   done | $(am__uniquify_input)`
 ETAGS = etags
 CTAGS = ctags
+DIST_SUBDIRS = $(SUBDIRS)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+am__relativize = \
+  dir0=`pwd`; \
+  sed_first='s,^\([^/]*\)/.*$$,\1,'; \
+  sed_rest='s,^[^/]*/*,,'; \
+  sed_last='s,^.*/\([^/]*\)$$,\1,'; \
+  sed_butlast='s,/*[^/]*$$,,'; \
+  while test -n "$$dir1"; do \
+    first=`echo "$$dir1" | sed -e "$$sed_first"`; \
+    if test "$$first" != "."; then \
+      if test "$$first" = ".."; then \
+        dir2=`echo "$$dir0" | sed -e "$$sed_last"`/"$$dir2"; \
+        dir0=`echo "$$dir0" | sed -e "$$sed_butlast"`; \
+      else \
+        first2=`echo "$$dir2" | sed -e "$$sed_first"`; \
+        if test "$$first2" = "$$first"; then \
+          dir2=`echo "$$dir2" | sed -e "$$sed_rest"`; \
+        else \
+          dir2="../$$dir2"; \
+        fi; \
+        dir0="$$dir0"/"$$first"; \
+      fi; \
+    fi; \
+    dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
+  done; \
+  reldir="$$dir2"
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
@@ -330,6 +179,9 @@ AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
 CC = @CC@
+CCAS = @CCAS@
+CCASDEPMODE = @CCASDEPMODE@
+CCASFLAGS = @CCASFLAGS@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 CODE_COVERAGE_CFLAGS = @CODE_COVERAGE_CFLAGS@
@@ -422,7 +274,7 @@ host_cpu = @host_cpu@
 host_os = @host_os@
 host_vendor = @host_vendor@
 htmldir = @htmldir@
-includedir = $(prefix)/include/libk/arm32/
+includedir = @includedir@
 infodir = @infodir@
 install_sh = @install_sh@
 libdir = @libdir@
@@ -444,13 +296,6 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-lib_LTLIBRARIES = \
-libk-arm32-stm32f10x.la \
-libk-arm32-stm32f30x.la \
-libk-arm32-stm32f37x.la \
-libk-arm32-stm32l1xx.la
-
-include_HEADERS = arm_adc.h arm_dma.h arm_gpio.h arm_pwm.h arm_spi.h arm_time.h arm_twi.h arm_uart.h stm32.h
 AM_CFLAGS = $(CODE_COVERAGE_CFLAGS) -std=gnu99 -Wall -Werror -Wno-format-y2k -W -Wstrict-prototypes -Wmissing-prototypes \
 -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch \
 -Wshadow -Wcast-align -Wchar-subscripts -Winline \
@@ -458,118 +303,10 @@ AM_CFLAGS = $(CODE_COVERAGE_CFLAGS) -std=gnu99 -Wall -Werror -Wno-format-y2k -W 
 -Wformat=2 -Wno-format-nonliteral -Wpointer-arith -Wno-missing-braces \
 -Wno-unused-parameter -Wno-unused-variable -Wno-inline
 
-
-#libk_arm32_la_SOURCES=arm_adc.c arm_dma.c arm_gpio.c arm_pwm.c arm_spi.c arm_time.c arm_twi.c arm_uart.c
-#libk_arm32_la_CFLAGS=$(AM_CFLAGS)
-libk_arm32_stm32f10x_la_SOURCES = f10x/init.c f10x/misc.c \
-f10x/stm32f10x_adc.c \
-f10x/stm32f10x_bkp.c \
-f10x/stm32f10x_can.c \
-f10x/stm32f10x_cec.c \
-f10x/stm32f10x_crc.c \
-f10x/stm32f10x_dac.c \
-f10x/stm32f10x_dbgmcu.c \
-f10x/stm32f10x_dma.c \
-f10x/stm32f10x_exti.c \
-f10x/stm32f10x_flash.c \
-f10x/stm32f10x_fsmc.c \
-f10x/stm32f10x_gpio.c \
-f10x/stm32f10x_i2c.c \
-f10x/stm32f10x_iwdg.c \
-f10x/stm32f10x_pwr.c \
-f10x/stm32f10x_rcc.c \
-f10x/stm32f10x_rtc.c \
-f10x/stm32f10x_sdio.c \
-f10x/stm32f10x_spi.c \
-f10x/stm32f10x_tim.c \
-f10x/stm32f10x_usart.c \
-f10x/stm32f10x_wwdg.c 
-
-libk_arm32_stm32f10x_la_CFLAGS = $(AM_CFLAGS) -ICMSIS -DHSE_VALUE=8000000 -DF_CPU=72000000 -DSTM32F10X_MD -mcpu=cortex-m3 -mthumb
-libk_arm32_stm32f30x_la_SOURCES = \
-f30x/stm32f30x_adc.c \
-f30x/stm32f30x_can.c \
-f30x/stm32f30x_comp.c \
-f30x/stm32f30x_crc.c \
-f30x/stm32f30x_dac.c \
-f30x/stm32f30x_dbgmcu.c \
-f30x/stm32f30x_dma.c \
-f30x/stm32f30x_exti.c \
-f30x/stm32f30x_flash.c \
-f30x/stm32f30x_gpio.c \
-f30x/stm32f30x_i2c.c \
-f30x/stm32f30x_iwdg.c \
-f30x/stm32f30x_misc.c \
-f30x/stm32f30x_opamp.c \
-f30x/stm32f30x_pwr.c \
-f30x/stm32f30x_rcc.c \
-f30x/stm32f30x_rtc.c \
-f30x/stm32f30x_spi.c \
-f30x/stm32f30x_syscfg.c \
-f30x/stm32f30x_tim.c \
-f30x/stm32f30x_usart.c \
-f30x/stm32f30x_wwdg.c 
-
-libk_arm32_stm32f30x_la_CFLAGS = $(AM_CFLAGS) -ICMSIS -DHSE_VALUE=8000000 -DF_CPU=72000000 -DSTM32F10X_MD -mcpu=cortex-m3 -mthumb
-libk_arm32_stm32f37x_la_SOURCES = \
-f37x/stm32f37x_adc.c \
-f37x/stm32f37x_can.c \
-f37x/stm32f37x_cec.c \
-f37x/stm32f37x_comp.c \
-f37x/stm32f37x_crc.c \
-f37x/stm32f37x_dac.c \
-f37x/stm32f37x_dbgmcu.c \
-f37x/stm32f37x_dma.c \
-f37x/stm32f37x_exti.c \
-f37x/stm32f37x_flash.c \
-f37x/stm32f37x_gpio.c \
-f37x/stm32f37x_i2c.c \
-f37x/stm32f37x_iwdg.c \
-f37x/stm32f37x_misc.c \
-f37x/stm32f37x_pwr.c \
-f37x/stm32f37x_rcc.c \
-f37x/stm32f37x_rtc.c \
-f37x/stm32f37x_sdadc.c \
-f37x/stm32f37x_spi.c \
-f37x/stm32f37x_syscfg.c \
-f37x/stm32f37x_tim.c \
-f37x/stm32f37x_usart.c \
-f37x/stm32f37x_wwdg.c 
-
-libk_arm32_stm32f37x_la_CFLAGS = $(AM_CFLAGS) -ICMSIS -DHSE_VALUE=8000000 -DF_CPU=72000000 -DSTM32F10X_MD -mcpu=cortex-m3 -mthumb
-libk_arm32_stm32l1xx_la_SOURCES = \
-l1xx/misc.c \
-l1xx/stm32l1xx_adc.c \
-l1xx/stm32l1xx_aes.c \
-l1xx/stm32l1xx_aes_util.c \
-l1xx/stm32l1xx_comp.c \
-l1xx/stm32l1xx_crc.c \
-l1xx/stm32l1xx_dac.c \
-l1xx/stm32l1xx_dbgmcu.c \
-l1xx/stm32l1xx_dma.c \
-l1xx/stm32l1xx_exti.c \
-l1xx/stm32l1xx_flash.c \
-l1xx/stm32l1xx_fsmc.c \
-l1xx/stm32l1xx_gpio.c \
-l1xx/stm32l1xx_i2c.c \
-l1xx/stm32l1xx_iwdg.c \
-l1xx/stm32l1xx_lcd.c \
-l1xx/stm32l1xx_opamp.c \
-l1xx/stm32l1xx_pwr.c \
-l1xx/stm32l1xx_rcc.c \
-l1xx/stm32l1xx_rtc.c \
-l1xx/stm32l1xx_sdio.c \
-l1xx/stm32l1xx_spi.c \
-l1xx/stm32l1xx_syscfg.c \
-l1xx/stm32l1xx_tim.c \
-l1xx/stm32l1xx_usart.c \
-l1xx/stm32l1xx_wwdg.c 
-
-libk_arm32_stm32l1xx_la_CFLAGS = $(AM_CFLAGS) -ICMSIS -DHSE_VALUE=8000000 -DF_CPU=72000000 -DSTM32F10X_MD -mcpu=cortex-m3 -mthumb
-all: all-am
+SUBDIRS = f10x f30x f37x l1xx
+all: all-recursive
 
 .SUFFIXES:
-.SUFFIXES: .c .lo .o .obj
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -601,1105 +338,67 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
 
-install-libLTLIBRARIES: $(lib_LTLIBRARIES)
-	@$(NORMAL_INSTALL)
-	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
-	list2=; for p in $$list; do \
-	  if test -f $$p; then \
-	    list2="$$list2 $$p"; \
-	  else :; fi; \
-	done; \
-	test -z "$$list2" || { \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(libdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(libdir)" || exit 1; \
-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(libdir)'"; \
-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(libdir)"; \
-	}
-
-uninstall-libLTLIBRARIES:
-	@$(NORMAL_UNINSTALL)
-	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
-	for p in $$list; do \
-	  $(am__strip_dir) \
-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(libdir)/$$f'"; \
-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(libdir)/$$f"; \
-	done
-
-clean-libLTLIBRARIES:
-	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
-	@list='$(lib_LTLIBRARIES)'; \
-	locs=`for p in $$list; do echo $$p; done | \
-	      sed 's|^[^/]*$$|.|; s|/[^/]*$$||; s|$$|/so_locations|' | \
-	      sort -u`; \
-	test -z "$$locs" || { \
-	  echo rm -f $${locs}; \
-	  rm -f $${locs}; \
-	}
-f10x/$(am__dirstamp):
-	@$(MKDIR_P) f10x
-	@: > f10x/$(am__dirstamp)
-f10x/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) f10x/$(DEPDIR)
-	@: > f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-init.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-misc.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_adc.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_bkp.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_can.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_cec.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_crc.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_dac.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.lo:  \
-	f10x/$(am__dirstamp) f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_dma.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_exti.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_flash.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_fsmc.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_gpio.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_i2c.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_iwdg.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_pwr.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_rcc.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_rtc.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_sdio.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_spi.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_tim.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_usart.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-f10x/libk_arm32_stm32f10x_la-stm32f10x_wwdg.lo: f10x/$(am__dirstamp) \
-	f10x/$(DEPDIR)/$(am__dirstamp)
-
-libk-arm32-stm32f10x.la: $(libk_arm32_stm32f10x_la_OBJECTS) $(libk_arm32_stm32f10x_la_DEPENDENCIES) $(EXTRA_libk_arm32_stm32f10x_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libk_arm32_stm32f10x_la_LINK) -rpath $(libdir) $(libk_arm32_stm32f10x_la_OBJECTS) $(libk_arm32_stm32f10x_la_LIBADD) $(LIBS)
-f30x/$(am__dirstamp):
-	@$(MKDIR_P) f30x
-	@: > f30x/$(am__dirstamp)
-f30x/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) f30x/$(DEPDIR)
-	@: > f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_adc.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_can.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_comp.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_crc.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_dac.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.lo:  \
-	f30x/$(am__dirstamp) f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_dma.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_exti.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_flash.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_gpio.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_i2c.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_iwdg.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_misc.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_opamp.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_pwr.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_rcc.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_rtc.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_spi.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_syscfg.lo:  \
-	f30x/$(am__dirstamp) f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_tim.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_usart.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-f30x/libk_arm32_stm32f30x_la-stm32f30x_wwdg.lo: f30x/$(am__dirstamp) \
-	f30x/$(DEPDIR)/$(am__dirstamp)
-
-libk-arm32-stm32f30x.la: $(libk_arm32_stm32f30x_la_OBJECTS) $(libk_arm32_stm32f30x_la_DEPENDENCIES) $(EXTRA_libk_arm32_stm32f30x_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libk_arm32_stm32f30x_la_LINK) -rpath $(libdir) $(libk_arm32_stm32f30x_la_OBJECTS) $(libk_arm32_stm32f30x_la_LIBADD) $(LIBS)
-f37x/$(am__dirstamp):
-	@$(MKDIR_P) f37x
-	@: > f37x/$(am__dirstamp)
-f37x/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) f37x/$(DEPDIR)
-	@: > f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_adc.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_can.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_cec.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_comp.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_crc.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_dac.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.lo:  \
-	f37x/$(am__dirstamp) f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_dma.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_exti.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_flash.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_gpio.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_i2c.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_iwdg.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_misc.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_pwr.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_rcc.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_rtc.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_sdadc.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_spi.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_syscfg.lo:  \
-	f37x/$(am__dirstamp) f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_tim.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_usart.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-f37x/libk_arm32_stm32f37x_la-stm32f37x_wwdg.lo: f37x/$(am__dirstamp) \
-	f37x/$(DEPDIR)/$(am__dirstamp)
-
-libk-arm32-stm32f37x.la: $(libk_arm32_stm32f37x_la_OBJECTS) $(libk_arm32_stm32f37x_la_DEPENDENCIES) $(EXTRA_libk_arm32_stm32f37x_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libk_arm32_stm32f37x_la_LINK) -rpath $(libdir) $(libk_arm32_stm32f37x_la_OBJECTS) $(libk_arm32_stm32f37x_la_LIBADD) $(LIBS)
-l1xx/$(am__dirstamp):
-	@$(MKDIR_P) l1xx
-	@: > l1xx/$(am__dirstamp)
-l1xx/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) l1xx/$(DEPDIR)
-	@: > l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-misc.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_adc.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.lo:  \
-	l1xx/$(am__dirstamp) l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_comp.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_crc.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dac.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.lo:  \
-	l1xx/$(am__dirstamp) l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dma.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_exti.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_flash.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_spi.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.lo:  \
-	l1xx/$(am__dirstamp) l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_tim.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_usart.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.lo: l1xx/$(am__dirstamp) \
-	l1xx/$(DEPDIR)/$(am__dirstamp)
-
-libk-arm32-stm32l1xx.la: $(libk_arm32_stm32l1xx_la_OBJECTS) $(libk_arm32_stm32l1xx_la_DEPENDENCIES) $(EXTRA_libk_arm32_stm32l1xx_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libk_arm32_stm32l1xx_la_LINK) -rpath $(libdir) $(libk_arm32_stm32l1xx_la_OBJECTS) $(libk_arm32_stm32l1xx_la_LIBADD) $(LIBS)
-
-mostlyclean-compile:
-	-rm -f *.$(OBJEXT)
-	-rm -f f10x/*.$(OBJEXT)
-	-rm -f f10x/*.lo
-	-rm -f f30x/*.$(OBJEXT)
-	-rm -f f30x/*.lo
-	-rm -f f37x/*.$(OBJEXT)
-	-rm -f f37x/*.lo
-	-rm -f l1xx/*.$(OBJEXT)
-	-rm -f l1xx/*.lo
-
-distclean-compile:
-	-rm -f *.tab.c
-
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-init.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-misc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_adc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_bkp.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_can.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_cec.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_crc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dac.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dma.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_exti.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_flash.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_fsmc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_gpio.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_i2c.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_pwr.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rcc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rtc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_sdio.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_spi.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_tim.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_usart.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_wwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_adc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_can.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_comp.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_crc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dac.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dma.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_exti.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_flash.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_gpio.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_i2c.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_misc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_opamp.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_pwr.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rcc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rtc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_spi.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_syscfg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_tim.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_usart.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_wwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_adc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_can.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_cec.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_comp.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_crc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dac.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dma.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_exti.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_flash.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_gpio.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_i2c.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_misc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_pwr.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rcc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rtc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_sdadc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_spi.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_syscfg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_tim.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_usart.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_wwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-misc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_adc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_comp.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_crc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dac.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dma.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_exti.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_flash.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_spi.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_tim.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_usart.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.Plo@am__quote@
-
-.c.o:
-@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ $<
-
-.c.obj:
-@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
-@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
-
-.c.lo:
-@am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
-@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
-@am__fastdepCC_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
-
-f10x/libk_arm32_stm32f10x_la-init.lo: f10x/init.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-init.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-init.Tpo -c -o f10x/libk_arm32_stm32f10x_la-init.lo `test -f 'f10x/init.c' || echo '$(srcdir)/'`f10x/init.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-init.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-init.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/init.c' object='f10x/libk_arm32_stm32f10x_la-init.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-init.lo `test -f 'f10x/init.c' || echo '$(srcdir)/'`f10x/init.c
-
-f10x/libk_arm32_stm32f10x_la-misc.lo: f10x/misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-misc.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-misc.Tpo -c -o f10x/libk_arm32_stm32f10x_la-misc.lo `test -f 'f10x/misc.c' || echo '$(srcdir)/'`f10x/misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-misc.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/misc.c' object='f10x/libk_arm32_stm32f10x_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-misc.lo `test -f 'f10x/misc.c' || echo '$(srcdir)/'`f10x/misc.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_adc.lo: f10x/stm32f10x_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_adc.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_adc.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_adc.lo `test -f 'f10x/stm32f10x_adc.c' || echo '$(srcdir)/'`f10x/stm32f10x_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_adc.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_adc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_adc.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_adc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_adc.lo `test -f 'f10x/stm32f10x_adc.c' || echo '$(srcdir)/'`f10x/stm32f10x_adc.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_bkp.lo: f10x/stm32f10x_bkp.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_bkp.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_bkp.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_bkp.lo `test -f 'f10x/stm32f10x_bkp.c' || echo '$(srcdir)/'`f10x/stm32f10x_bkp.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_bkp.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_bkp.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_bkp.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_bkp.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_bkp.lo `test -f 'f10x/stm32f10x_bkp.c' || echo '$(srcdir)/'`f10x/stm32f10x_bkp.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_can.lo: f10x/stm32f10x_can.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_can.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_can.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_can.lo `test -f 'f10x/stm32f10x_can.c' || echo '$(srcdir)/'`f10x/stm32f10x_can.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_can.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_can.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_can.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_can.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_can.lo `test -f 'f10x/stm32f10x_can.c' || echo '$(srcdir)/'`f10x/stm32f10x_can.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_cec.lo: f10x/stm32f10x_cec.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_cec.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_cec.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_cec.lo `test -f 'f10x/stm32f10x_cec.c' || echo '$(srcdir)/'`f10x/stm32f10x_cec.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_cec.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_cec.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_cec.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_cec.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_cec.lo `test -f 'f10x/stm32f10x_cec.c' || echo '$(srcdir)/'`f10x/stm32f10x_cec.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_crc.lo: f10x/stm32f10x_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_crc.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_crc.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_crc.lo `test -f 'f10x/stm32f10x_crc.c' || echo '$(srcdir)/'`f10x/stm32f10x_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_crc.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_crc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_crc.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_crc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_crc.lo `test -f 'f10x/stm32f10x_crc.c' || echo '$(srcdir)/'`f10x/stm32f10x_crc.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_dac.lo: f10x/stm32f10x_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_dac.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dac.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_dac.lo `test -f 'f10x/stm32f10x_dac.c' || echo '$(srcdir)/'`f10x/stm32f10x_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dac.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dac.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_dac.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_dac.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_dac.lo `test -f 'f10x/stm32f10x_dac.c' || echo '$(srcdir)/'`f10x/stm32f10x_dac.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.lo: f10x/stm32f10x_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.lo `test -f 'f10x/stm32f10x_dbgmcu.c' || echo '$(srcdir)/'`f10x/stm32f10x_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_dbgmcu.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_dbgmcu.lo `test -f 'f10x/stm32f10x_dbgmcu.c' || echo '$(srcdir)/'`f10x/stm32f10x_dbgmcu.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_dma.lo: f10x/stm32f10x_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_dma.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dma.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_dma.lo `test -f 'f10x/stm32f10x_dma.c' || echo '$(srcdir)/'`f10x/stm32f10x_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dma.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_dma.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_dma.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_dma.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_dma.lo `test -f 'f10x/stm32f10x_dma.c' || echo '$(srcdir)/'`f10x/stm32f10x_dma.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_exti.lo: f10x/stm32f10x_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_exti.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_exti.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_exti.lo `test -f 'f10x/stm32f10x_exti.c' || echo '$(srcdir)/'`f10x/stm32f10x_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_exti.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_exti.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_exti.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_exti.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_exti.lo `test -f 'f10x/stm32f10x_exti.c' || echo '$(srcdir)/'`f10x/stm32f10x_exti.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_flash.lo: f10x/stm32f10x_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_flash.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_flash.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_flash.lo `test -f 'f10x/stm32f10x_flash.c' || echo '$(srcdir)/'`f10x/stm32f10x_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_flash.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_flash.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_flash.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_flash.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_flash.lo `test -f 'f10x/stm32f10x_flash.c' || echo '$(srcdir)/'`f10x/stm32f10x_flash.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_fsmc.lo: f10x/stm32f10x_fsmc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_fsmc.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_fsmc.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_fsmc.lo `test -f 'f10x/stm32f10x_fsmc.c' || echo '$(srcdir)/'`f10x/stm32f10x_fsmc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_fsmc.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_fsmc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_fsmc.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_fsmc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_fsmc.lo `test -f 'f10x/stm32f10x_fsmc.c' || echo '$(srcdir)/'`f10x/stm32f10x_fsmc.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_gpio.lo: f10x/stm32f10x_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_gpio.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_gpio.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_gpio.lo `test -f 'f10x/stm32f10x_gpio.c' || echo '$(srcdir)/'`f10x/stm32f10x_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_gpio.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_gpio.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_gpio.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_gpio.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_gpio.lo `test -f 'f10x/stm32f10x_gpio.c' || echo '$(srcdir)/'`f10x/stm32f10x_gpio.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_i2c.lo: f10x/stm32f10x_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_i2c.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_i2c.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_i2c.lo `test -f 'f10x/stm32f10x_i2c.c' || echo '$(srcdir)/'`f10x/stm32f10x_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_i2c.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_i2c.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_i2c.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_i2c.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_i2c.lo `test -f 'f10x/stm32f10x_i2c.c' || echo '$(srcdir)/'`f10x/stm32f10x_i2c.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_iwdg.lo: f10x/stm32f10x_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_iwdg.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_iwdg.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_iwdg.lo `test -f 'f10x/stm32f10x_iwdg.c' || echo '$(srcdir)/'`f10x/stm32f10x_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_iwdg.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_iwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_iwdg.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_iwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_iwdg.lo `test -f 'f10x/stm32f10x_iwdg.c' || echo '$(srcdir)/'`f10x/stm32f10x_iwdg.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_pwr.lo: f10x/stm32f10x_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_pwr.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_pwr.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_pwr.lo `test -f 'f10x/stm32f10x_pwr.c' || echo '$(srcdir)/'`f10x/stm32f10x_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_pwr.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_pwr.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_pwr.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_pwr.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_pwr.lo `test -f 'f10x/stm32f10x_pwr.c' || echo '$(srcdir)/'`f10x/stm32f10x_pwr.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_rcc.lo: f10x/stm32f10x_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_rcc.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rcc.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_rcc.lo `test -f 'f10x/stm32f10x_rcc.c' || echo '$(srcdir)/'`f10x/stm32f10x_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rcc.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rcc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_rcc.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_rcc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_rcc.lo `test -f 'f10x/stm32f10x_rcc.c' || echo '$(srcdir)/'`f10x/stm32f10x_rcc.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_rtc.lo: f10x/stm32f10x_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_rtc.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rtc.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_rtc.lo `test -f 'f10x/stm32f10x_rtc.c' || echo '$(srcdir)/'`f10x/stm32f10x_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rtc.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_rtc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_rtc.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_rtc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_rtc.lo `test -f 'f10x/stm32f10x_rtc.c' || echo '$(srcdir)/'`f10x/stm32f10x_rtc.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_sdio.lo: f10x/stm32f10x_sdio.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_sdio.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_sdio.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_sdio.lo `test -f 'f10x/stm32f10x_sdio.c' || echo '$(srcdir)/'`f10x/stm32f10x_sdio.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_sdio.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_sdio.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_sdio.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_sdio.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_sdio.lo `test -f 'f10x/stm32f10x_sdio.c' || echo '$(srcdir)/'`f10x/stm32f10x_sdio.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_spi.lo: f10x/stm32f10x_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_spi.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_spi.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_spi.lo `test -f 'f10x/stm32f10x_spi.c' || echo '$(srcdir)/'`f10x/stm32f10x_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_spi.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_spi.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_spi.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_spi.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_spi.lo `test -f 'f10x/stm32f10x_spi.c' || echo '$(srcdir)/'`f10x/stm32f10x_spi.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_tim.lo: f10x/stm32f10x_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_tim.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_tim.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_tim.lo `test -f 'f10x/stm32f10x_tim.c' || echo '$(srcdir)/'`f10x/stm32f10x_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_tim.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_tim.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_tim.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_tim.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_tim.lo `test -f 'f10x/stm32f10x_tim.c' || echo '$(srcdir)/'`f10x/stm32f10x_tim.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_usart.lo: f10x/stm32f10x_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_usart.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_usart.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_usart.lo `test -f 'f10x/stm32f10x_usart.c' || echo '$(srcdir)/'`f10x/stm32f10x_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_usart.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_usart.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_usart.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_usart.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_usart.lo `test -f 'f10x/stm32f10x_usart.c' || echo '$(srcdir)/'`f10x/stm32f10x_usart.c
-
-f10x/libk_arm32_stm32f10x_la-stm32f10x_wwdg.lo: f10x/stm32f10x_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -MT f10x/libk_arm32_stm32f10x_la-stm32f10x_wwdg.lo -MD -MP -MF f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_wwdg.Tpo -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_wwdg.lo `test -f 'f10x/stm32f10x_wwdg.c' || echo '$(srcdir)/'`f10x/stm32f10x_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_wwdg.Tpo f10x/$(DEPDIR)/libk_arm32_stm32f10x_la-stm32f10x_wwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f10x/stm32f10x_wwdg.c' object='f10x/libk_arm32_stm32f10x_la-stm32f10x_wwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f10x_la_CFLAGS) $(CFLAGS) -c -o f10x/libk_arm32_stm32f10x_la-stm32f10x_wwdg.lo `test -f 'f10x/stm32f10x_wwdg.c' || echo '$(srcdir)/'`f10x/stm32f10x_wwdg.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_adc.lo: f30x/stm32f30x_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_adc.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_adc.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_adc.lo `test -f 'f30x/stm32f30x_adc.c' || echo '$(srcdir)/'`f30x/stm32f30x_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_adc.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_adc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_adc.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_adc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_adc.lo `test -f 'f30x/stm32f30x_adc.c' || echo '$(srcdir)/'`f30x/stm32f30x_adc.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_can.lo: f30x/stm32f30x_can.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_can.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_can.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_can.lo `test -f 'f30x/stm32f30x_can.c' || echo '$(srcdir)/'`f30x/stm32f30x_can.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_can.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_can.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_can.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_can.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_can.lo `test -f 'f30x/stm32f30x_can.c' || echo '$(srcdir)/'`f30x/stm32f30x_can.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_comp.lo: f30x/stm32f30x_comp.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_comp.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_comp.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_comp.lo `test -f 'f30x/stm32f30x_comp.c' || echo '$(srcdir)/'`f30x/stm32f30x_comp.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_comp.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_comp.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_comp.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_comp.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_comp.lo `test -f 'f30x/stm32f30x_comp.c' || echo '$(srcdir)/'`f30x/stm32f30x_comp.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_crc.lo: f30x/stm32f30x_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_crc.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_crc.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_crc.lo `test -f 'f30x/stm32f30x_crc.c' || echo '$(srcdir)/'`f30x/stm32f30x_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_crc.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_crc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_crc.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_crc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_crc.lo `test -f 'f30x/stm32f30x_crc.c' || echo '$(srcdir)/'`f30x/stm32f30x_crc.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_dac.lo: f30x/stm32f30x_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_dac.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dac.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_dac.lo `test -f 'f30x/stm32f30x_dac.c' || echo '$(srcdir)/'`f30x/stm32f30x_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dac.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dac.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_dac.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_dac.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_dac.lo `test -f 'f30x/stm32f30x_dac.c' || echo '$(srcdir)/'`f30x/stm32f30x_dac.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.lo: f30x/stm32f30x_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.lo `test -f 'f30x/stm32f30x_dbgmcu.c' || echo '$(srcdir)/'`f30x/stm32f30x_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_dbgmcu.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_dbgmcu.lo `test -f 'f30x/stm32f30x_dbgmcu.c' || echo '$(srcdir)/'`f30x/stm32f30x_dbgmcu.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_dma.lo: f30x/stm32f30x_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_dma.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dma.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_dma.lo `test -f 'f30x/stm32f30x_dma.c' || echo '$(srcdir)/'`f30x/stm32f30x_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dma.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_dma.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_dma.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_dma.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_dma.lo `test -f 'f30x/stm32f30x_dma.c' || echo '$(srcdir)/'`f30x/stm32f30x_dma.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_exti.lo: f30x/stm32f30x_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_exti.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_exti.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_exti.lo `test -f 'f30x/stm32f30x_exti.c' || echo '$(srcdir)/'`f30x/stm32f30x_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_exti.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_exti.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_exti.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_exti.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_exti.lo `test -f 'f30x/stm32f30x_exti.c' || echo '$(srcdir)/'`f30x/stm32f30x_exti.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_flash.lo: f30x/stm32f30x_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_flash.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_flash.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_flash.lo `test -f 'f30x/stm32f30x_flash.c' || echo '$(srcdir)/'`f30x/stm32f30x_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_flash.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_flash.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_flash.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_flash.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_flash.lo `test -f 'f30x/stm32f30x_flash.c' || echo '$(srcdir)/'`f30x/stm32f30x_flash.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_gpio.lo: f30x/stm32f30x_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_gpio.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_gpio.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_gpio.lo `test -f 'f30x/stm32f30x_gpio.c' || echo '$(srcdir)/'`f30x/stm32f30x_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_gpio.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_gpio.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_gpio.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_gpio.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_gpio.lo `test -f 'f30x/stm32f30x_gpio.c' || echo '$(srcdir)/'`f30x/stm32f30x_gpio.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_i2c.lo: f30x/stm32f30x_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_i2c.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_i2c.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_i2c.lo `test -f 'f30x/stm32f30x_i2c.c' || echo '$(srcdir)/'`f30x/stm32f30x_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_i2c.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_i2c.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_i2c.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_i2c.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_i2c.lo `test -f 'f30x/stm32f30x_i2c.c' || echo '$(srcdir)/'`f30x/stm32f30x_i2c.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_iwdg.lo: f30x/stm32f30x_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_iwdg.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_iwdg.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_iwdg.lo `test -f 'f30x/stm32f30x_iwdg.c' || echo '$(srcdir)/'`f30x/stm32f30x_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_iwdg.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_iwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_iwdg.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_iwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_iwdg.lo `test -f 'f30x/stm32f30x_iwdg.c' || echo '$(srcdir)/'`f30x/stm32f30x_iwdg.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_misc.lo: f30x/stm32f30x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_misc.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_misc.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_misc.lo `test -f 'f30x/stm32f30x_misc.c' || echo '$(srcdir)/'`f30x/stm32f30x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_misc.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_misc.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_misc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_misc.lo `test -f 'f30x/stm32f30x_misc.c' || echo '$(srcdir)/'`f30x/stm32f30x_misc.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_opamp.lo: f30x/stm32f30x_opamp.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_opamp.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_opamp.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_opamp.lo `test -f 'f30x/stm32f30x_opamp.c' || echo '$(srcdir)/'`f30x/stm32f30x_opamp.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_opamp.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_opamp.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_opamp.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_opamp.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_opamp.lo `test -f 'f30x/stm32f30x_opamp.c' || echo '$(srcdir)/'`f30x/stm32f30x_opamp.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_pwr.lo: f30x/stm32f30x_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_pwr.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_pwr.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_pwr.lo `test -f 'f30x/stm32f30x_pwr.c' || echo '$(srcdir)/'`f30x/stm32f30x_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_pwr.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_pwr.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_pwr.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_pwr.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_pwr.lo `test -f 'f30x/stm32f30x_pwr.c' || echo '$(srcdir)/'`f30x/stm32f30x_pwr.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_rcc.lo: f30x/stm32f30x_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_rcc.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rcc.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_rcc.lo `test -f 'f30x/stm32f30x_rcc.c' || echo '$(srcdir)/'`f30x/stm32f30x_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rcc.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rcc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_rcc.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_rcc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_rcc.lo `test -f 'f30x/stm32f30x_rcc.c' || echo '$(srcdir)/'`f30x/stm32f30x_rcc.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_rtc.lo: f30x/stm32f30x_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_rtc.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rtc.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_rtc.lo `test -f 'f30x/stm32f30x_rtc.c' || echo '$(srcdir)/'`f30x/stm32f30x_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rtc.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_rtc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_rtc.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_rtc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_rtc.lo `test -f 'f30x/stm32f30x_rtc.c' || echo '$(srcdir)/'`f30x/stm32f30x_rtc.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_spi.lo: f30x/stm32f30x_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_spi.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_spi.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_spi.lo `test -f 'f30x/stm32f30x_spi.c' || echo '$(srcdir)/'`f30x/stm32f30x_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_spi.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_spi.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_spi.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_spi.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_spi.lo `test -f 'f30x/stm32f30x_spi.c' || echo '$(srcdir)/'`f30x/stm32f30x_spi.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_syscfg.lo: f30x/stm32f30x_syscfg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_syscfg.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_syscfg.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_syscfg.lo `test -f 'f30x/stm32f30x_syscfg.c' || echo '$(srcdir)/'`f30x/stm32f30x_syscfg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_syscfg.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_syscfg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_syscfg.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_syscfg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_syscfg.lo `test -f 'f30x/stm32f30x_syscfg.c' || echo '$(srcdir)/'`f30x/stm32f30x_syscfg.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_tim.lo: f30x/stm32f30x_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_tim.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_tim.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_tim.lo `test -f 'f30x/stm32f30x_tim.c' || echo '$(srcdir)/'`f30x/stm32f30x_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_tim.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_tim.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_tim.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_tim.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_tim.lo `test -f 'f30x/stm32f30x_tim.c' || echo '$(srcdir)/'`f30x/stm32f30x_tim.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_usart.lo: f30x/stm32f30x_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_usart.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_usart.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_usart.lo `test -f 'f30x/stm32f30x_usart.c' || echo '$(srcdir)/'`f30x/stm32f30x_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_usart.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_usart.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_usart.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_usart.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_usart.lo `test -f 'f30x/stm32f30x_usart.c' || echo '$(srcdir)/'`f30x/stm32f30x_usart.c
-
-f30x/libk_arm32_stm32f30x_la-stm32f30x_wwdg.lo: f30x/stm32f30x_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -MT f30x/libk_arm32_stm32f30x_la-stm32f30x_wwdg.lo -MD -MP -MF f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_wwdg.Tpo -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_wwdg.lo `test -f 'f30x/stm32f30x_wwdg.c' || echo '$(srcdir)/'`f30x/stm32f30x_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_wwdg.Tpo f30x/$(DEPDIR)/libk_arm32_stm32f30x_la-stm32f30x_wwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f30x/stm32f30x_wwdg.c' object='f30x/libk_arm32_stm32f30x_la-stm32f30x_wwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f30x_la_CFLAGS) $(CFLAGS) -c -o f30x/libk_arm32_stm32f30x_la-stm32f30x_wwdg.lo `test -f 'f30x/stm32f30x_wwdg.c' || echo '$(srcdir)/'`f30x/stm32f30x_wwdg.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_adc.lo: f37x/stm32f37x_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_adc.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_adc.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_adc.lo `test -f 'f37x/stm32f37x_adc.c' || echo '$(srcdir)/'`f37x/stm32f37x_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_adc.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_adc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_adc.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_adc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_adc.lo `test -f 'f37x/stm32f37x_adc.c' || echo '$(srcdir)/'`f37x/stm32f37x_adc.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_can.lo: f37x/stm32f37x_can.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_can.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_can.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_can.lo `test -f 'f37x/stm32f37x_can.c' || echo '$(srcdir)/'`f37x/stm32f37x_can.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_can.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_can.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_can.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_can.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_can.lo `test -f 'f37x/stm32f37x_can.c' || echo '$(srcdir)/'`f37x/stm32f37x_can.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_cec.lo: f37x/stm32f37x_cec.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_cec.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_cec.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_cec.lo `test -f 'f37x/stm32f37x_cec.c' || echo '$(srcdir)/'`f37x/stm32f37x_cec.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_cec.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_cec.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_cec.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_cec.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_cec.lo `test -f 'f37x/stm32f37x_cec.c' || echo '$(srcdir)/'`f37x/stm32f37x_cec.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_comp.lo: f37x/stm32f37x_comp.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_comp.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_comp.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_comp.lo `test -f 'f37x/stm32f37x_comp.c' || echo '$(srcdir)/'`f37x/stm32f37x_comp.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_comp.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_comp.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_comp.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_comp.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_comp.lo `test -f 'f37x/stm32f37x_comp.c' || echo '$(srcdir)/'`f37x/stm32f37x_comp.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_crc.lo: f37x/stm32f37x_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_crc.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_crc.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_crc.lo `test -f 'f37x/stm32f37x_crc.c' || echo '$(srcdir)/'`f37x/stm32f37x_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_crc.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_crc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_crc.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_crc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_crc.lo `test -f 'f37x/stm32f37x_crc.c' || echo '$(srcdir)/'`f37x/stm32f37x_crc.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_dac.lo: f37x/stm32f37x_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_dac.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dac.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_dac.lo `test -f 'f37x/stm32f37x_dac.c' || echo '$(srcdir)/'`f37x/stm32f37x_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dac.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dac.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_dac.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_dac.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_dac.lo `test -f 'f37x/stm32f37x_dac.c' || echo '$(srcdir)/'`f37x/stm32f37x_dac.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.lo: f37x/stm32f37x_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.lo `test -f 'f37x/stm32f37x_dbgmcu.c' || echo '$(srcdir)/'`f37x/stm32f37x_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_dbgmcu.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_dbgmcu.lo `test -f 'f37x/stm32f37x_dbgmcu.c' || echo '$(srcdir)/'`f37x/stm32f37x_dbgmcu.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_dma.lo: f37x/stm32f37x_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_dma.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dma.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_dma.lo `test -f 'f37x/stm32f37x_dma.c' || echo '$(srcdir)/'`f37x/stm32f37x_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dma.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_dma.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_dma.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_dma.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_dma.lo `test -f 'f37x/stm32f37x_dma.c' || echo '$(srcdir)/'`f37x/stm32f37x_dma.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_exti.lo: f37x/stm32f37x_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_exti.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_exti.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_exti.lo `test -f 'f37x/stm32f37x_exti.c' || echo '$(srcdir)/'`f37x/stm32f37x_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_exti.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_exti.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_exti.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_exti.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_exti.lo `test -f 'f37x/stm32f37x_exti.c' || echo '$(srcdir)/'`f37x/stm32f37x_exti.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_flash.lo: f37x/stm32f37x_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_flash.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_flash.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_flash.lo `test -f 'f37x/stm32f37x_flash.c' || echo '$(srcdir)/'`f37x/stm32f37x_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_flash.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_flash.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_flash.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_flash.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_flash.lo `test -f 'f37x/stm32f37x_flash.c' || echo '$(srcdir)/'`f37x/stm32f37x_flash.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_gpio.lo: f37x/stm32f37x_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_gpio.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_gpio.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_gpio.lo `test -f 'f37x/stm32f37x_gpio.c' || echo '$(srcdir)/'`f37x/stm32f37x_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_gpio.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_gpio.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_gpio.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_gpio.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_gpio.lo `test -f 'f37x/stm32f37x_gpio.c' || echo '$(srcdir)/'`f37x/stm32f37x_gpio.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_i2c.lo: f37x/stm32f37x_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_i2c.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_i2c.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_i2c.lo `test -f 'f37x/stm32f37x_i2c.c' || echo '$(srcdir)/'`f37x/stm32f37x_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_i2c.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_i2c.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_i2c.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_i2c.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_i2c.lo `test -f 'f37x/stm32f37x_i2c.c' || echo '$(srcdir)/'`f37x/stm32f37x_i2c.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_iwdg.lo: f37x/stm32f37x_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_iwdg.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_iwdg.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_iwdg.lo `test -f 'f37x/stm32f37x_iwdg.c' || echo '$(srcdir)/'`f37x/stm32f37x_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_iwdg.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_iwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_iwdg.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_iwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_iwdg.lo `test -f 'f37x/stm32f37x_iwdg.c' || echo '$(srcdir)/'`f37x/stm32f37x_iwdg.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_misc.lo: f37x/stm32f37x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_misc.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_misc.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_misc.lo `test -f 'f37x/stm32f37x_misc.c' || echo '$(srcdir)/'`f37x/stm32f37x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_misc.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_misc.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_misc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_misc.lo `test -f 'f37x/stm32f37x_misc.c' || echo '$(srcdir)/'`f37x/stm32f37x_misc.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_pwr.lo: f37x/stm32f37x_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_pwr.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_pwr.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_pwr.lo `test -f 'f37x/stm32f37x_pwr.c' || echo '$(srcdir)/'`f37x/stm32f37x_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_pwr.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_pwr.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_pwr.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_pwr.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_pwr.lo `test -f 'f37x/stm32f37x_pwr.c' || echo '$(srcdir)/'`f37x/stm32f37x_pwr.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_rcc.lo: f37x/stm32f37x_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_rcc.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rcc.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_rcc.lo `test -f 'f37x/stm32f37x_rcc.c' || echo '$(srcdir)/'`f37x/stm32f37x_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rcc.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rcc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_rcc.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_rcc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_rcc.lo `test -f 'f37x/stm32f37x_rcc.c' || echo '$(srcdir)/'`f37x/stm32f37x_rcc.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_rtc.lo: f37x/stm32f37x_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_rtc.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rtc.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_rtc.lo `test -f 'f37x/stm32f37x_rtc.c' || echo '$(srcdir)/'`f37x/stm32f37x_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rtc.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_rtc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_rtc.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_rtc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_rtc.lo `test -f 'f37x/stm32f37x_rtc.c' || echo '$(srcdir)/'`f37x/stm32f37x_rtc.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_sdadc.lo: f37x/stm32f37x_sdadc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_sdadc.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_sdadc.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_sdadc.lo `test -f 'f37x/stm32f37x_sdadc.c' || echo '$(srcdir)/'`f37x/stm32f37x_sdadc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_sdadc.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_sdadc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_sdadc.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_sdadc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_sdadc.lo `test -f 'f37x/stm32f37x_sdadc.c' || echo '$(srcdir)/'`f37x/stm32f37x_sdadc.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_spi.lo: f37x/stm32f37x_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_spi.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_spi.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_spi.lo `test -f 'f37x/stm32f37x_spi.c' || echo '$(srcdir)/'`f37x/stm32f37x_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_spi.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_spi.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_spi.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_spi.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_spi.lo `test -f 'f37x/stm32f37x_spi.c' || echo '$(srcdir)/'`f37x/stm32f37x_spi.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_syscfg.lo: f37x/stm32f37x_syscfg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_syscfg.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_syscfg.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_syscfg.lo `test -f 'f37x/stm32f37x_syscfg.c' || echo '$(srcdir)/'`f37x/stm32f37x_syscfg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_syscfg.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_syscfg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_syscfg.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_syscfg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_syscfg.lo `test -f 'f37x/stm32f37x_syscfg.c' || echo '$(srcdir)/'`f37x/stm32f37x_syscfg.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_tim.lo: f37x/stm32f37x_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_tim.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_tim.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_tim.lo `test -f 'f37x/stm32f37x_tim.c' || echo '$(srcdir)/'`f37x/stm32f37x_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_tim.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_tim.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_tim.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_tim.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_tim.lo `test -f 'f37x/stm32f37x_tim.c' || echo '$(srcdir)/'`f37x/stm32f37x_tim.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_usart.lo: f37x/stm32f37x_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_usart.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_usart.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_usart.lo `test -f 'f37x/stm32f37x_usart.c' || echo '$(srcdir)/'`f37x/stm32f37x_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_usart.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_usart.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_usart.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_usart.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_usart.lo `test -f 'f37x/stm32f37x_usart.c' || echo '$(srcdir)/'`f37x/stm32f37x_usart.c
-
-f37x/libk_arm32_stm32f37x_la-stm32f37x_wwdg.lo: f37x/stm32f37x_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -MT f37x/libk_arm32_stm32f37x_la-stm32f37x_wwdg.lo -MD -MP -MF f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_wwdg.Tpo -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_wwdg.lo `test -f 'f37x/stm32f37x_wwdg.c' || echo '$(srcdir)/'`f37x/stm32f37x_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_wwdg.Tpo f37x/$(DEPDIR)/libk_arm32_stm32f37x_la-stm32f37x_wwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='f37x/stm32f37x_wwdg.c' object='f37x/libk_arm32_stm32f37x_la-stm32f37x_wwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32f37x_la_CFLAGS) $(CFLAGS) -c -o f37x/libk_arm32_stm32f37x_la-stm32f37x_wwdg.lo `test -f 'f37x/stm32f37x_wwdg.c' || echo '$(srcdir)/'`f37x/stm32f37x_wwdg.c
-
-l1xx/libk_arm32_stm32l1xx_la-misc.lo: l1xx/misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-misc.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-misc.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-misc.lo `test -f 'l1xx/misc.c' || echo '$(srcdir)/'`l1xx/misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-misc.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/misc.c' object='l1xx/libk_arm32_stm32l1xx_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-misc.lo `test -f 'l1xx/misc.c' || echo '$(srcdir)/'`l1xx/misc.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_adc.lo: l1xx/stm32l1xx_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_adc.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_adc.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_adc.lo `test -f 'l1xx/stm32l1xx_adc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_adc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_adc.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_adc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_adc.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_adc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_adc.lo `test -f 'l1xx/stm32l1xx_adc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_adc.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes.lo: l1xx/stm32l1xx_aes.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes.lo `test -f 'l1xx/stm32l1xx_aes.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_aes.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_aes.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes.lo `test -f 'l1xx/stm32l1xx_aes.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_aes.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.lo: l1xx/stm32l1xx_aes_util.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.lo `test -f 'l1xx/stm32l1xx_aes_util.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_aes_util.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_aes_util.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_aes_util.lo `test -f 'l1xx/stm32l1xx_aes_util.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_aes_util.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_comp.lo: l1xx/stm32l1xx_comp.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_comp.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_comp.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_comp.lo `test -f 'l1xx/stm32l1xx_comp.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_comp.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_comp.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_comp.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_comp.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_comp.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_comp.lo `test -f 'l1xx/stm32l1xx_comp.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_comp.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_crc.lo: l1xx/stm32l1xx_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_crc.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_crc.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_crc.lo `test -f 'l1xx/stm32l1xx_crc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_crc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_crc.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_crc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_crc.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_crc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_crc.lo `test -f 'l1xx/stm32l1xx_crc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_crc.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dac.lo: l1xx/stm32l1xx_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dac.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dac.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dac.lo `test -f 'l1xx/stm32l1xx_dac.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_dac.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dac.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dac.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_dac.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dac.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dac.lo `test -f 'l1xx/stm32l1xx_dac.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_dac.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.lo: l1xx/stm32l1xx_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.lo `test -f 'l1xx/stm32l1xx_dbgmcu.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_dbgmcu.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_dbgmcu.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dbgmcu.lo `test -f 'l1xx/stm32l1xx_dbgmcu.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_dbgmcu.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dma.lo: l1xx/stm32l1xx_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dma.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dma.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dma.lo `test -f 'l1xx/stm32l1xx_dma.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_dma.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dma.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_dma.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_dma.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dma.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_dma.lo `test -f 'l1xx/stm32l1xx_dma.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_dma.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_exti.lo: l1xx/stm32l1xx_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_exti.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_exti.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_exti.lo `test -f 'l1xx/stm32l1xx_exti.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_exti.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_exti.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_exti.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_exti.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_exti.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_exti.lo `test -f 'l1xx/stm32l1xx_exti.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_exti.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_flash.lo: l1xx/stm32l1xx_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_flash.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_flash.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_flash.lo `test -f 'l1xx/stm32l1xx_flash.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_flash.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_flash.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_flash.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_flash.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_flash.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_flash.lo `test -f 'l1xx/stm32l1xx_flash.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_flash.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.lo: l1xx/stm32l1xx_fsmc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.lo `test -f 'l1xx/stm32l1xx_fsmc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_fsmc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_fsmc.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_fsmc.lo `test -f 'l1xx/stm32l1xx_fsmc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_fsmc.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.lo: l1xx/stm32l1xx_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.lo `test -f 'l1xx/stm32l1xx_gpio.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_gpio.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_gpio.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_gpio.lo `test -f 'l1xx/stm32l1xx_gpio.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_gpio.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.lo: l1xx/stm32l1xx_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.lo `test -f 'l1xx/stm32l1xx_i2c.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_i2c.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_i2c.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_i2c.lo `test -f 'l1xx/stm32l1xx_i2c.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_i2c.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.lo: l1xx/stm32l1xx_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.lo `test -f 'l1xx/stm32l1xx_iwdg.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_iwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_iwdg.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_iwdg.lo `test -f 'l1xx/stm32l1xx_iwdg.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_iwdg.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.lo: l1xx/stm32l1xx_lcd.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.lo `test -f 'l1xx/stm32l1xx_lcd.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_lcd.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_lcd.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_lcd.lo `test -f 'l1xx/stm32l1xx_lcd.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_lcd.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.lo: l1xx/stm32l1xx_opamp.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.lo `test -f 'l1xx/stm32l1xx_opamp.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_opamp.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_opamp.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_opamp.lo `test -f 'l1xx/stm32l1xx_opamp.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_opamp.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.lo: l1xx/stm32l1xx_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.lo `test -f 'l1xx/stm32l1xx_pwr.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_pwr.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_pwr.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_pwr.lo `test -f 'l1xx/stm32l1xx_pwr.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_pwr.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.lo: l1xx/stm32l1xx_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.lo `test -f 'l1xx/stm32l1xx_rcc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_rcc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_rcc.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rcc.lo `test -f 'l1xx/stm32l1xx_rcc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_rcc.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.lo: l1xx/stm32l1xx_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.lo `test -f 'l1xx/stm32l1xx_rtc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_rtc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_rtc.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_rtc.lo `test -f 'l1xx/stm32l1xx_rtc.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_rtc.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.lo: l1xx/stm32l1xx_sdio.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.lo `test -f 'l1xx/stm32l1xx_sdio.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_sdio.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_sdio.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_sdio.lo `test -f 'l1xx/stm32l1xx_sdio.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_sdio.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_spi.lo: l1xx/stm32l1xx_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_spi.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_spi.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_spi.lo `test -f 'l1xx/stm32l1xx_spi.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_spi.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_spi.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_spi.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_spi.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_spi.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_spi.lo `test -f 'l1xx/stm32l1xx_spi.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_spi.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.lo: l1xx/stm32l1xx_syscfg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.lo `test -f 'l1xx/stm32l1xx_syscfg.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_syscfg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_syscfg.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_syscfg.lo `test -f 'l1xx/stm32l1xx_syscfg.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_syscfg.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_tim.lo: l1xx/stm32l1xx_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_tim.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_tim.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_tim.lo `test -f 'l1xx/stm32l1xx_tim.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_tim.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_tim.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_tim.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_tim.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_tim.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_tim.lo `test -f 'l1xx/stm32l1xx_tim.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_tim.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_usart.lo: l1xx/stm32l1xx_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_usart.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_usart.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_usart.lo `test -f 'l1xx/stm32l1xx_usart.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_usart.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_usart.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_usart.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_usart.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_usart.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_usart.lo `test -f 'l1xx/stm32l1xx_usart.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_usart.c
-
-l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.lo: l1xx/stm32l1xx_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -MT l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.lo -MD -MP -MF l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.Tpo -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.lo `test -f 'l1xx/stm32l1xx_wwdg.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_wwdg.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.Tpo l1xx/$(DEPDIR)/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='l1xx/stm32l1xx_wwdg.c' object='l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libk_arm32_stm32l1xx_la_CFLAGS) $(CFLAGS) -c -o l1xx/libk_arm32_stm32l1xx_la-stm32l1xx_wwdg.lo `test -f 'l1xx/stm32l1xx_wwdg.c' || echo '$(srcdir)/'`l1xx/stm32l1xx_wwdg.c
-
 mostlyclean-libtool:
 	-rm -f *.lo
 
 clean-libtool:
 	-rm -rf .libs _libs
-	-rm -rf f10x/.libs f10x/_libs
-	-rm -rf f30x/.libs f30x/_libs
-	-rm -rf f37x/.libs f37x/_libs
-	-rm -rf l1xx/.libs l1xx/_libs
-install-includeHEADERS: $(include_HEADERS)
-	@$(NORMAL_INSTALL)
-	@list='$(include_HEADERS)'; test -n "$(includedir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(includedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(includedir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(includedir)'"; \
-	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(includedir)" || exit $$?; \
-	done
 
-uninstall-includeHEADERS:
-	@$(NORMAL_UNINSTALL)
-	@list='$(include_HEADERS)'; test -n "$(includedir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(includedir)'; $(am__uninstall_files_from_dir)
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run 'make' without going through this Makefile.
+# To change the values of 'make' variables: instead of editing Makefiles,
+# (1) if the variable is set in 'config.status', edit 'config.status'
+#     (which will cause the Makefiles to be regenerated when you run 'make');
+# (2) otherwise, pass the desired values on the 'make' command line.
+$(am__recursive_targets):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
-tags: tags-am
+tags: tags-recursive
 TAGS: tags
 
 tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
 	set x; \
 	here=`pwd`; \
+	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
+	  include_option=--etags-include; \
+	  empty_fix=.; \
+	else \
+	  include_option=--include; \
+	  empty_fix=; \
+	fi; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test ! -f $$subdir/TAGS || \
+	      set "$$@" "$$include_option=$$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
 	$(am__define_uniq_tagged_files); \
 	shift; \
 	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
@@ -1712,7 +411,7 @@ tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
 	      $$unique; \
 	  fi; \
 	fi
-ctags: ctags-am
+ctags: ctags-recursive
 
 CTAGS: ctags
 ctags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
@@ -1725,7 +424,7 @@ GTAGS:
 	here=`$(am__cd) $(top_builddir) && pwd` \
 	  && $(am__cd) $(top_srcdir) \
 	  && gtags -i $(GTAGS_ARGS) "$$here"
-cscopelist: cscopelist-am
+cscopelist: cscopelist-recursive
 
 cscopelist-am: $(am__tagged_files)
 	list='$(am__tagged_files)'; \
@@ -1774,22 +473,45 @@ distdir: $(DISTFILES)
 	    || exit 1; \
 	  fi; \
 	done
-check-am: all-am
-check: check-am
-all-am: Makefile $(LTLIBRARIES) $(HEADERS)
-installdirs:
-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"; do \
-	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+	@list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    $(am__make_dryrun) \
+	      || test -d "$(distdir)/$$subdir" \
+	      || $(MKDIR_P) "$(distdir)/$$subdir" \
+	      || exit 1; \
+	    dir1=$$subdir; dir2="$(distdir)/$$subdir"; \
+	    $(am__relativize); \
+	    new_distdir=$$reldir; \
+	    dir1=$$subdir; dir2="$(top_distdir)"; \
+	    $(am__relativize); \
+	    new_top_distdir=$$reldir; \
+	    echo " (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir="$$new_top_distdir" distdir="$$new_distdir" \\"; \
+	    echo "     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)"; \
+	    ($(am__cd) $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$$new_top_distdir" \
+	        distdir="$$new_distdir" \
+		am__remove_distdir=: \
+		am__skip_length_check=: \
+		am__skip_mode_fix=: \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
 	done
-install: install-am
-install-exec: install-exec-am
-install-data: install-data-am
-uninstall: uninstall-am
+check-am: all-am
+check: check-recursive
+all-am: Makefile
+installdirs: installdirs-recursive
+installdirs-am:
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 
-installcheck: installcheck-am
+installcheck: installcheck-recursive
 install-strip:
 	if test -z '$(STRIP)'; then \
 	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
@@ -1807,106 +529,90 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
-	-rm -f f10x/$(DEPDIR)/$(am__dirstamp)
-	-rm -f f10x/$(am__dirstamp)
-	-rm -f f30x/$(DEPDIR)/$(am__dirstamp)
-	-rm -f f30x/$(am__dirstamp)
-	-rm -f f37x/$(DEPDIR)/$(am__dirstamp)
-	-rm -f f37x/$(am__dirstamp)
-	-rm -f l1xx/$(DEPDIR)/$(am__dirstamp)
-	-rm -f l1xx/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-clean: clean-am
+clean: clean-recursive
 
-clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
-	mostlyclean-am
+clean-am: clean-generic clean-libtool mostlyclean-am
 
-distclean: distclean-am
-	-rm -rf f10x/$(DEPDIR) f30x/$(DEPDIR) f37x/$(DEPDIR) l1xx/$(DEPDIR)
+distclean: distclean-recursive
 	-rm -f Makefile
-distclean-am: clean-am distclean-compile distclean-generic \
-	distclean-tags
+distclean-am: clean-am distclean-generic distclean-tags
 
-dvi: dvi-am
+dvi: dvi-recursive
 
 dvi-am:
 
-html: html-am
+html: html-recursive
 
 html-am:
 
-info: info-am
+info: info-recursive
 
 info-am:
 
-install-data-am: install-includeHEADERS
+install-data-am:
 
-install-dvi: install-dvi-am
+install-dvi: install-dvi-recursive
 
 install-dvi-am:
 
-install-exec-am: install-libLTLIBRARIES
+install-exec-am:
 
-install-html: install-html-am
+install-html: install-html-recursive
 
 install-html-am:
 
-install-info: install-info-am
+install-info: install-info-recursive
 
 install-info-am:
 
 install-man:
 
-install-pdf: install-pdf-am
+install-pdf: install-pdf-recursive
 
 install-pdf-am:
 
-install-ps: install-ps-am
+install-ps: install-ps-recursive
 
 install-ps-am:
 
 installcheck-am:
 
-maintainer-clean: maintainer-clean-am
-	-rm -rf f10x/$(DEPDIR) f30x/$(DEPDIR) f37x/$(DEPDIR) l1xx/$(DEPDIR)
+maintainer-clean: maintainer-clean-recursive
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
-mostlyclean: mostlyclean-am
+mostlyclean: mostlyclean-recursive
 
-mostlyclean-am: mostlyclean-compile mostlyclean-generic \
-	mostlyclean-libtool
+mostlyclean-am: mostlyclean-generic mostlyclean-libtool
 
-pdf: pdf-am
+pdf: pdf-recursive
 
 pdf-am:
 
-ps: ps-am
+ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES
+uninstall-am:
 
-.MAKE: install-am install-strip
+.MAKE: $(am__recursive_targets) install-am install-strip
 
-.PHONY: CTAGS GTAGS TAGS all all-am check check-am clean clean-generic \
-	clean-libLTLIBRARIES clean-libtool cscopelist-am ctags \
-	ctags-am distclean distclean-compile distclean-generic \
-	distclean-libtool distclean-tags distdir dvi dvi-am html \
-	html-am info info-am install install-am install-data \
-	install-data-am install-dvi install-dvi-am install-exec \
-	install-exec-am install-html install-html-am \
-	install-includeHEADERS install-info install-info-am \
-	install-libLTLIBRARIES install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags tags-am uninstall uninstall-am uninstall-includeHEADERS \
-	uninstall-libLTLIBRARIES
+.PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am check \
+	check-am clean clean-generic clean-libtool cscopelist-am ctags \
+	ctags-am distclean distclean-generic distclean-libtool \
+	distclean-tags distdir dvi dvi-am html html-am info info-am \
+	install install-am install-data install-data-am install-dvi \
+	install-dvi-am install-exec install-exec-am install-html \
+	install-html-am install-info install-info-am install-man \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	installdirs-am maintainer-clean maintainer-clean-generic \
+	mostlyclean mostlyclean-generic mostlyclean-libtool pdf pdf-am \
+	ps ps-am tags tags-am uninstall uninstall-am
 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
