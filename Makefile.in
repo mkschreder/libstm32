@@ -80,8 +80,10 @@ host_triplet = @host@
 subdir = .
 DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
-	$(top_srcdir)/configure $(am__configure_deps) COPYING \
-	config/compile config/config.guess config/config.sub \
+	$(top_srcdir)/configure $(am__configure_deps) \
+	$(srcdir)/libstm32f10x.pc.in $(srcdir)/libstm32f30x.pc.in \
+	$(srcdir)/libstm32f37x.pc.in $(srcdir)/libstm32l1xx.pc.in \
+	COPYING config/compile config/config.guess config/config.sub \
 	config/depcomp config/install-sh config/missing \
 	config/ltmain.sh $(top_srcdir)/config/compile \
 	$(top_srcdir)/config/config.guess \
@@ -98,7 +100,8 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES =
+CONFIG_CLEAN_FILES = libstm32f10x.pc libstm32f30x.pc libstm32f37x.pc \
+	libstm32l1xx.pc
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -364,6 +367,14 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
+libstm32f10x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f30x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f30x.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f37x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f37x.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32l1xx.pc: $(top_builddir)/config.status $(srcdir)/libstm32l1xx.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
 	-rm -f *.lo

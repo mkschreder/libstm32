@@ -12711,6 +12711,9 @@ fi
 
 
 
+ac_config_files="$ac_config_files libstm32f10x.pc libstm32f30x.pc libstm32f37x.pc libstm32l1xx.pc"
+
+
 ac_config_files="$ac_config_files Makefile src/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/l1xx/Makefile"
 
 cat >confcache <<\_ACEOF
@@ -13745,6 +13748,10 @@ do
   case $ac_config_target in
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
+    "libstm32f10x.pc") CONFIG_FILES="$CONFIG_FILES libstm32f10x.pc" ;;
+    "libstm32f30x.pc") CONFIG_FILES="$CONFIG_FILES libstm32f30x.pc" ;;
+    "libstm32f37x.pc") CONFIG_FILES="$CONFIG_FILES libstm32f37x.pc" ;;
+    "libstm32l1xx.pc") CONFIG_FILES="$CONFIG_FILES libstm32l1xx.pc" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "src/f10x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f10x/Makefile" ;;

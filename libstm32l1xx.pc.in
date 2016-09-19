@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+includedir=@includedir@
+libdir=@libdir@
+
+Name: libstm32l1xx
+Description: STM32l1xx support library
+Version: @VERSION@
+Cflags: -I@includedir@/stm32/l1xx/ -I@includedir@/stm32/CMSIS/
+Libs: -L@libdir@ -lstm32l1xx
