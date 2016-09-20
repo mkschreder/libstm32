@@ -1,7 +1,6 @@
- 
 _ramstart = 0x20000000; 
-_estack = 0x20004FF0; 
-_minimum_stack_size = 0x100; 
+_estack = 0x20001FF0;
+_minimum_stack_size = 0x100; /* 256 bytes miniumum stack size */
 
 MEMORY
 {
