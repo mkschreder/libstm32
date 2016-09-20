@@ -14,7 +14,15 @@ LT_INIT
 AC_PROG_CC
 AM_PROG_AS
 
-AC_CONFIG_FILES([libstm32f10x.pc libstm32f30x.pc libstm32f37x.pc libstm32l1xx.pc])
+AC_CONFIG_FILES([libstm32f10x.pc \
+	libstm32f10x_cl.pc \
+	libstm32f10x_hd.pc \
+	libstm32f10x_hd_vl.pc \
+	libstm32f10x_ld.pc \
+	libstm32f10x_ld_vl.pc \
+	libstm32f10x_md.pc \
+	libstm32f10x_md_vl.pc \
+	libstm32f30x.pc libstm32f37x.pc libstm32l1xx.pc])
 
 AC_OUTPUT(Makefile src/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/l1xx/Makefile)
 

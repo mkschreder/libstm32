@@ -81,12 +81,18 @@ subdir = .
 DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
-	$(srcdir)/libstm32f10x.pc.in $(srcdir)/libstm32f30x.pc.in \
-	$(srcdir)/libstm32f37x.pc.in $(srcdir)/libstm32l1xx.pc.in \
-	COPYING config/compile config/config.guess config/config.sub \
-	config/depcomp config/install-sh config/missing \
-	config/ltmain.sh $(top_srcdir)/config/compile \
-	$(top_srcdir)/config/config.guess \
+	$(srcdir)/libstm32f10x.pc.in $(srcdir)/libstm32f10x_cl.pc.in \
+	$(srcdir)/libstm32f10x_hd.pc.in \
+	$(srcdir)/libstm32f10x_hd_vl.pc.in \
+	$(srcdir)/libstm32f10x_ld.pc.in \
+	$(srcdir)/libstm32f10x_ld_vl.pc.in \
+	$(srcdir)/libstm32f10x_md.pc.in \
+	$(srcdir)/libstm32f10x_md_vl.pc.in \
+	$(srcdir)/libstm32f30x.pc.in $(srcdir)/libstm32f37x.pc.in \
+	$(srcdir)/libstm32l1xx.pc.in COPYING config/compile \
+	config/config.guess config/config.sub config/depcomp \
+	config/install-sh config/missing config/ltmain.sh \
+	$(top_srcdir)/config/compile $(top_srcdir)/config/config.guess \
 	$(top_srcdir)/config/config.sub \
 	$(top_srcdir)/config/install-sh $(top_srcdir)/config/ltmain.sh \
 	$(top_srcdir)/config/missing
@@ -100,8 +106,10 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES = libstm32f10x.pc libstm32f30x.pc libstm32f37x.pc \
-	libstm32l1xx.pc
+CONFIG_CLEAN_FILES = libstm32f10x.pc libstm32f10x_cl.pc \
+	libstm32f10x_hd.pc libstm32f10x_hd_vl.pc libstm32f10x_ld.pc \
+	libstm32f10x_ld_vl.pc libstm32f10x_md.pc libstm32f10x_md_vl.pc \
+	libstm32f30x.pc libstm32f37x.pc libstm32l1xx.pc
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -368,6 +376,20 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
 libstm32f10x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f10x_cl.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x_cl.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f10x_hd.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x_hd.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f10x_hd_vl.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x_hd_vl.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f10x_ld.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x_ld.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f10x_ld_vl.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x_ld_vl.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f10x_md.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x_md.pc.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+libstm32f10x_md_vl.pc: $(top_builddir)/config.status $(srcdir)/libstm32f10x_md_vl.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 libstm32f30x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f30x.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@

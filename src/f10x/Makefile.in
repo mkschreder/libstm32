@@ -121,10 +121,77 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
+libstartup_stm32f10x_cl_la_LIBADD =
+am_libstartup_stm32f10x_cl_la_OBJECTS = startup_stm32f10x_cl.lo
+libstartup_stm32f10x_cl_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_cl_la_OBJECTS)
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
+libstartup_stm32f10x_cl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_cl_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+	$(LDFLAGS) -o $@
+libstartup_stm32f10x_hd_la_LIBADD =
+am_libstartup_stm32f10x_hd_la_OBJECTS = startup_stm32f10x_hd.lo
+libstartup_stm32f10x_hd_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_hd_la_OBJECTS)
+libstartup_stm32f10x_hd_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_hd_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+	$(LDFLAGS) -o $@
+libstartup_stm32f10x_hd_vl_la_LIBADD =
+am_libstartup_stm32f10x_hd_vl_la_OBJECTS = startup_stm32f10x_hd_vl.lo
+libstartup_stm32f10x_hd_vl_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_hd_vl_la_OBJECTS)
+libstartup_stm32f10x_hd_vl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_hd_vl_la_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+libstartup_stm32f10x_ld_la_LIBADD =
+am_libstartup_stm32f10x_ld_la_OBJECTS = startup_stm32f10x_ld.lo
+libstartup_stm32f10x_ld_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_ld_la_OBJECTS)
+libstartup_stm32f10x_ld_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_ld_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+	$(LDFLAGS) -o $@
+libstartup_stm32f10x_ld_vl_la_LIBADD =
+am_libstartup_stm32f10x_ld_vl_la_OBJECTS = startup_stm32f10x_ld_vl.lo
+libstartup_stm32f10x_ld_vl_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_ld_vl_la_OBJECTS)
+libstartup_stm32f10x_ld_vl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_ld_vl_la_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+libstartup_stm32f10x_md_la_LIBADD =
+am_libstartup_stm32f10x_md_la_OBJECTS = startup_stm32f10x_md.lo
+libstartup_stm32f10x_md_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_md_la_OBJECTS)
+libstartup_stm32f10x_md_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_md_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+	$(LDFLAGS) -o $@
+libstartup_stm32f10x_md_vl_la_LIBADD =
+am_libstartup_stm32f10x_md_vl_la_OBJECTS = startup_stm32f10x_md_vl.lo
+libstartup_stm32f10x_md_vl_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_md_vl_la_OBJECTS)
+libstartup_stm32f10x_md_vl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_md_vl_la_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+libstartup_stm32f10x_xl_la_LIBADD =
+am_libstartup_stm32f10x_xl_la_OBJECTS = startup_stm32f10x_xl.lo
+libstartup_stm32f10x_xl_la_OBJECTS =  \
+	$(am_libstartup_stm32f10x_xl_la_OBJECTS)
+libstartup_stm32f10x_xl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(libstartup_stm32f10x_xl_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+	$(LDFLAGS) -o $@
 libstm32f10x_la_LIBADD =
-am_libstm32f10x_la_OBJECTS = startup_stm32f10x_md.lo \
-	libstm32f10x_la-system_stm32f10x.lo libstm32f10x_la-init.lo \
-	libstm32f10x_la-stm32f10x_misc.lo \
+am_libstm32f10x_la_OBJECTS = libstm32f10x_la-system_stm32f10x.lo \
+	libstm32f10x_la-init.lo libstm32f10x_la-stm32f10x_misc.lo \
 	libstm32f10x_la-stm32f10x_adc.lo \
 	libstm32f10x_la-stm32f10x_bkp.lo \
 	libstm32f10x_la-stm32f10x_can.lo \
@@ -148,10 +215,6 @@ am_libstm32f10x_la_OBJECTS = startup_stm32f10x_md.lo \
 	libstm32f10x_la-stm32f10x_usart.lo \
 	libstm32f10x_la-stm32f10x_wwdg.lo
 libstm32f10x_la_OBJECTS = $(am_libstm32f10x_la_OBJECTS)
-AM_V_lt = $(am__v_lt_@AM_V@)
-am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-am__v_lt_0 = --silent
-am__v_lt_1 = 
 libstm32f10x_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(libstm32f10x_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
@@ -200,8 +263,24 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libstm32f10x_la_SOURCES)
-DIST_SOURCES = $(libstm32f10x_la_SOURCES)
+SOURCES = $(libstartup_stm32f10x_cl_la_SOURCES) \
+	$(libstartup_stm32f10x_hd_la_SOURCES) \
+	$(libstartup_stm32f10x_hd_vl_la_SOURCES) \
+	$(libstartup_stm32f10x_ld_la_SOURCES) \
+	$(libstartup_stm32f10x_ld_vl_la_SOURCES) \
+	$(libstartup_stm32f10x_md_la_SOURCES) \
+	$(libstartup_stm32f10x_md_vl_la_SOURCES) \
+	$(libstartup_stm32f10x_xl_la_SOURCES) \
+	$(libstm32f10x_la_SOURCES)
+DIST_SOURCES = $(libstartup_stm32f10x_cl_la_SOURCES) \
+	$(libstartup_stm32f10x_hd_la_SOURCES) \
+	$(libstartup_stm32f10x_hd_vl_la_SOURCES) \
+	$(libstartup_stm32f10x_ld_la_SOURCES) \
+	$(libstartup_stm32f10x_ld_vl_la_SOURCES) \
+	$(libstartup_stm32f10x_md_la_SOURCES) \
+	$(libstartup_stm32f10x_md_vl_la_SOURCES) \
+	$(libstartup_stm32f10x_xl_la_SOURCES) \
+	$(libstm32f10x_la_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -379,11 +458,49 @@ stm32f10x_tim.h \
 stm32f10x_usart.h \
 stm32f10x_wwdg.h 
 
-lib_LTLIBRARIES = libstm32f10x.la 
+lib_LTLIBRARIES = libstm32f10x.la \
+libstartup_stm32f10x_cl.la \
+libstartup_stm32f10x_hd.la \
+libstartup_stm32f10x_hd_vl.la \
+libstartup_stm32f10x_ld.la \
+libstartup_stm32f10x_ld_vl.la \
+libstartup_stm32f10x_md.la \
+libstartup_stm32f10x_md_vl.la \
+libstartup_stm32f10x_xl.la 
 
-#FIXME: have to pick the right startup file based on density!
+libstartup_stm32f10x_cl_la_SOURCES = \
+startup_stm32f10x_cl.S
+
+libstartup_stm32f10x_cl_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
+libstartup_stm32f10x_hd_la_SOURCES = \
+startup_stm32f10x_hd.S
+
+libstartup_stm32f10x_hd_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
+libstartup_stm32f10x_hd_vl_la_SOURCES = \
+startup_stm32f10x_hd_vl.S
+
+libstartup_stm32f10x_hd_vl_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
+libstartup_stm32f10x_ld_la_SOURCES = \
+startup_stm32f10x_ld.S
+
+libstartup_stm32f10x_ld_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
+libstartup_stm32f10x_ld_vl_la_SOURCES = \
+startup_stm32f10x_ld_vl.S
+
+libstartup_stm32f10x_ld_vl_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
+libstartup_stm32f10x_md_la_SOURCES = \
+startup_stm32f10x_md.S
+
+libstartup_stm32f10x_md_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
+libstartup_stm32f10x_md_vl_la_SOURCES = \
+startup_stm32f10x_md_vl.S
+
+libstartup_stm32f10x_md_vl_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
+libstartup_stm32f10x_xl_la_SOURCES = \
+startup_stm32f10x_xl.S
+
+libstartup_stm32f10x_xl_la_CFLAGS = $(AM_CFLAGS) -I../CMSIS -std=c99 
 libstm32f10x_la_SOURCES = \
-startup_stm32f10x_md.S\
 system_stm32f10x.c \
 init.c \
 stm32f10x_misc.c \
@@ -481,6 +598,30 @@ clean-libLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
+libstartup_stm32f10x_cl.la: $(libstartup_stm32f10x_cl_la_OBJECTS) $(libstartup_stm32f10x_cl_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_cl_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_cl_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_cl_la_OBJECTS) $(libstartup_stm32f10x_cl_la_LIBADD) $(LIBS)
+
+libstartup_stm32f10x_hd.la: $(libstartup_stm32f10x_hd_la_OBJECTS) $(libstartup_stm32f10x_hd_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_hd_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_hd_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_hd_la_OBJECTS) $(libstartup_stm32f10x_hd_la_LIBADD) $(LIBS)
+
+libstartup_stm32f10x_hd_vl.la: $(libstartup_stm32f10x_hd_vl_la_OBJECTS) $(libstartup_stm32f10x_hd_vl_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_hd_vl_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_hd_vl_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_hd_vl_la_OBJECTS) $(libstartup_stm32f10x_hd_vl_la_LIBADD) $(LIBS)
+
+libstartup_stm32f10x_ld.la: $(libstartup_stm32f10x_ld_la_OBJECTS) $(libstartup_stm32f10x_ld_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_ld_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_ld_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_ld_la_OBJECTS) $(libstartup_stm32f10x_ld_la_LIBADD) $(LIBS)
+
+libstartup_stm32f10x_ld_vl.la: $(libstartup_stm32f10x_ld_vl_la_OBJECTS) $(libstartup_stm32f10x_ld_vl_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_ld_vl_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_ld_vl_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_ld_vl_la_OBJECTS) $(libstartup_stm32f10x_ld_vl_la_LIBADD) $(LIBS)
+
+libstartup_stm32f10x_md.la: $(libstartup_stm32f10x_md_la_OBJECTS) $(libstartup_stm32f10x_md_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_md_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_md_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_md_la_OBJECTS) $(libstartup_stm32f10x_md_la_LIBADD) $(LIBS)
+
+libstartup_stm32f10x_md_vl.la: $(libstartup_stm32f10x_md_vl_la_OBJECTS) $(libstartup_stm32f10x_md_vl_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_md_vl_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_md_vl_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_md_vl_la_OBJECTS) $(libstartup_stm32f10x_md_vl_la_LIBADD) $(LIBS)
+
+libstartup_stm32f10x_xl.la: $(libstartup_stm32f10x_xl_la_OBJECTS) $(libstartup_stm32f10x_xl_la_DEPENDENCIES) $(EXTRA_libstartup_stm32f10x_xl_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libstartup_stm32f10x_xl_la_LINK) -rpath $(libdir) $(libstartup_stm32f10x_xl_la_OBJECTS) $(libstartup_stm32f10x_xl_la_LIBADD) $(LIBS)
+
 libstm32f10x.la: $(libstm32f10x_la_OBJECTS) $(libstm32f10x_la_DEPENDENCIES) $(EXTRA_libstm32f10x_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(libstm32f10x_la_LINK) -rpath $(libdir) $(libstm32f10x_la_OBJECTS) $(libstm32f10x_la_LIBADD) $(LIBS)
 
@@ -515,7 +656,14 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_la-stm32f10x_usart.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_la-system_stm32f10x.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_cl.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_hd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_hd_vl.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_ld.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_ld_vl.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_md.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_md_vl.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/startup_stm32f10x_xl.Plo@am__quote@
 
 .S.o:
 @am__fastdepCCAS_TRUE@	$(AM_V_CPPAS)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\

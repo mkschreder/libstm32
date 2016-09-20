@@ -24,11 +24,49 @@ stm32f10x_tim.h \
 stm32f10x_usart.h \
 stm32f10x_wwdg.h 
 
-lib_LTLIBRARIES=libstm32f10x.la 
+lib_LTLIBRARIES=libstm32f10x.la \
+libstartup_stm32f10x_cl.la \
+libstartup_stm32f10x_hd.la \
+libstartup_stm32f10x_hd_vl.la \
+libstartup_stm32f10x_ld.la \
+libstartup_stm32f10x_ld_vl.la \
+libstartup_stm32f10x_md.la \
+libstartup_stm32f10x_md_vl.la \
+libstartup_stm32f10x_xl.la 
+ 
+libstartup_stm32f10x_cl_la_SOURCES=\
+startup_stm32f10x_cl.S
+libstartup_stm32f10x_cl_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
 
-#FIXME: have to pick the right startup file based on density!
+libstartup_stm32f10x_hd_la_SOURCES=\
+startup_stm32f10x_hd.S
+libstartup_stm32f10x_hd_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
+
+libstartup_stm32f10x_hd_vl_la_SOURCES=\
+startup_stm32f10x_hd_vl.S
+libstartup_stm32f10x_hd_vl_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
+
+libstartup_stm32f10x_ld_la_SOURCES=\
+startup_stm32f10x_ld.S
+libstartup_stm32f10x_ld_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
+
+libstartup_stm32f10x_ld_vl_la_SOURCES=\
+startup_stm32f10x_ld_vl.S
+libstartup_stm32f10x_ld_vl_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
+
+libstartup_stm32f10x_md_la_SOURCES=\
+startup_stm32f10x_md.S
+libstartup_stm32f10x_md_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
+
+libstartup_stm32f10x_md_vl_la_SOURCES=\
+startup_stm32f10x_md_vl.S
+libstartup_stm32f10x_md_vl_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
+
+libstartup_stm32f10x_xl_la_SOURCES=\
+startup_stm32f10x_xl.S
+libstartup_stm32f10x_xl_la_CFLAGS=$(AM_CFLAGS) -I../CMSIS -std=c99 
+
 libstm32f10x_la_SOURCES=\
-startup_stm32f10x_md.S\
 system_stm32f10x.c \
 init.c \
 stm32f10x_misc.c \

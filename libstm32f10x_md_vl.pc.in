@@ -3,8 +3,8 @@ exec_prefix=@exec_prefix@
 includedir=@includedir@
 libdir=@libdir@
 
-Name: libstm32f10x
+Name: libstm32f10x_md_vl
 Description: STM32F10x support library
 Version: @VERSION@
-Cflags: -I@includedir@/stm32/f10x/ -I@includedir@/stm32/CMSIS/
-Libs: -L@libdir@ -lstm32f10x 
+Cflags: 
+Libs: -L@libdir@ -lstm32f10x_md_vl -Tstm32f10x_md_vl.ld 

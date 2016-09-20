@@ -162,8 +162,9 @@ void c_startup(void)
 		*(src++) = 0;
 	
 	ConstructorsInit(); 
-	
-	main();
+
+	_start(); 
+	//main();
 }
 
 

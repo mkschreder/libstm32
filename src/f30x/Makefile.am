@@ -26,6 +26,7 @@ stm32f30x_wwdg.h
 lib_LTLIBRARIES=libstm32f30x.la 
 
 libstm32f30x_la_SOURCES=\
+startup_stm32f30x.S \
 stm32f30x_adc.c \
 stm32f30x_can.c \
 stm32f30x_comp.c \
