@@ -1,5 +1,5 @@
 _ramstart = 0x20000000; 
-_estack = 0x20001FF0;
+_estack = 0x20005000;
 _minimum_stack_size = 0x100; /* 256 bytes miniumum stack size */
 
 MEMORY

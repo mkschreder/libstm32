@@ -32,10 +32,10 @@ static void RCC_Configuration(void){
 	
 	RCC_DeInit();
 	// 1. Clocking the controller from internal HSI RC (8 MHz)
-  RCC_HSICmd(ENABLE);
-  // wait until the HSI is ready
-  while(RCC_GetFlagStatus(RCC_FLAG_HSIRDY) == RESET);
-  RCC_SYSCLKConfig(RCC_SYSCLKSource_HSI);
+	RCC_HSICmd(ENABLE);
+	// wait until the HSI is ready
+	while(RCC_GetFlagStatus(RCC_FLAG_HSIRDY) == RESET);
+	RCC_SYSCLKConfig(RCC_SYSCLKSource_HSI);
   
 	RCC_HSEConfig(RCC_HSE_ON);
 	ErrorStatus HSEStartUpStatus = RCC_WaitForHSEStartUp();
@@ -161,7 +161,7 @@ void c_startup(void)
 	while(src < &_ebss) 
 		*(src++) = 0;
 	
-	ConstructorsInit(); 
+	//ConstructorsInit(); 
 
 	_start(); 
 	//main();
