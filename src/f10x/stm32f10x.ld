@@ -24,11 +24,6 @@
  *   __StackTop
  *   __stack
  */
-MEMORY
-{
-	RAM (rwx)  : ORIGIN = 0x20000000, LENGTH = 20K
-	FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 128K
-}
 
 ENTRY(Reset_Handler)
 
@@ -36,8 +31,11 @@ SECTIONS
 {
     .text :
     {
-        KEEP(*(.isr_vector))
+        KEEP(*(.isr_vector .isr_vector.*))
+		*(.text)
         *(.text*)
+		*(.rodata)
+		*(.rodata*)
 
         KEEP(*(.init))
         KEEP(*(.fini))
@@ -56,33 +54,26 @@ SECTIONS
         *(SORT(.dtors.*))
         *(.dtors)
 
-        *(.rodata*)
-
         KEEP(*(.eh_frame*))
+
+		*(.ARM.extab* .gnu.linkonce.armextab.*)
+    	__exidx_start = .;
+		*(.ARM.exidx* .gnu.linkonce.armexidx.*)
+    	__exidx_end = .;
+
+		_etext = .; 
+    	__etext = .;
     } > FLASH
 
-    .ARM.extab : 
-    {
-        *(.ARM.extab* .gnu.linkonce.armextab.*)
-    } > FLASH
-
-    __exidx_start = .;
-    .ARM.exidx :
-    {
-        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-    } > FLASH
-    __exidx_end = .;
-
-    __etext = .;
-    _etext = .;
 	_sidata = .;
         
-    .data : AT (__etext)
+    .data : 
     {
         __data_start__ = .;
 		_sdata = .;
         *(vtable)
-        *(.data*)
+        *(.data*)      
+    	*(.data.*) 
 
         . = ALIGN(4);
         /* preinit data */
@@ -105,19 +96,18 @@ SECTIONS
         KEEP(*(.fini_array))
         PROVIDE_HIDDEN (__fini_array_end = .);
 
-        KEEP(*(.jcr*))
         . = ALIGN(4);
         /* All data end */
         __data_end__ = .;
 		_edata = .;
+    } > RAM AT>FLASH
 
-    } > RAM
-
-    .bss :
+    .bss (NOLOAD):
     {
         . = ALIGN(4);
         __bss_start__ = .;
 		_sbss = .;
+        *(.bss)
         *(.bss*)
         *(COMMON)
         . = ALIGN(4);
@@ -150,5 +140,15 @@ SECTIONS
     
     /* Check if data + heap + stack exceeds RAM limit */
     ASSERT(__StackLimit >= __HeapLimit, "region RAM overflowed with stack")
+	
+	/* Generates an error if minimum stack size is not left in ram */
+	._check_stack_space :
+	{
+		. = ALIGN(4);
+		. = . + _minimum_stack_size;
+		. = ALIGN(4);
+	} >RAM
+
+	.ARM.attributes 0 : { KEEP (*(.ARM.attributes)) }
 }
 

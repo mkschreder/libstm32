@@ -15,22 +15,19 @@
   *            After Reset the Cortex-M3 processor is in Thread mode,
   *            priority is Privileged, and the Stack is set to Main.
   ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
-  *
-  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
-  * You may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at:
-  *
-  *        http://www.st.com/software_license_agreement_liberty_v2
-  *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  *
+  Released into the public domain.
+  This work is free: you can redistribute it and/or modify it under the terms of 
+  Creative Commons Zero license v1.0
+
+  This work is licensed under the Creative Commons Zero 1.0 United States License. 
+  To view a copy of this license, visit http://creativecommons.org/publicdomain/zero/1.0/ 
+  or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, 
+  California, 94105, USA.
+
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+  or FITNESS FOR A PARTICULAR PURPOSE.
+
   ******************************************************************************
   */
     
@@ -68,39 +65,10 @@ defined in linker script */
 	.weak	Reset_Handler
 	.type	Reset_Handler, %function
 Reset_Handler:	
-
-/* Copy the data segment initializers from flash to SRAM */  
-  movs	r1, #0
-  b	LoopCopyDataInit
-
-CopyDataInit:
-	ldr	r3, =_sidata
-	ldr	r3, [r3, r1]
-	str	r3, [r0, r1]
-	adds	r1, r1, #4
-    
-LoopCopyDataInit:
-	ldr	r0, =_sdata
-	ldr	r3, =_edata
-	adds	r2, r0, r1
-	cmp	r2, r3
-	bcc	CopyDataInit
-	ldr	r2, =_sbss
-	b	LoopFillZerobss
-/* Zero fill the bss segment. */  
-FillZerobss:
-	movs	r3, #0
-	str	r3, [r2], #4
-    
-LoopFillZerobss:
-	ldr	r3, = _ebss
-	cmp	r2, r3
-	bcc	FillZerobss
-/* Call the clock system intitialization function.*/
-  bl  SystemInit 	
-/* Call the application's entry point.*/
-	bl	c_startup
-	bx	lr    
+	LDR r0, =_estack
+	MSR msp, r0
+	bl c_startup
+	bx lr
 .size	Reset_Handler, .-Reset_Handler
 
 /**
@@ -361,4 +329,3 @@ g_pfnVectors:
 	.weak	USBWakeUp_IRQHandler
 	.thumb_set USBWakeUp_IRQHandler,Default_Handler
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
