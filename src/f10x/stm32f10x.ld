@@ -32,12 +32,8 @@ SECTIONS
     .text :
     {
         KEEP(*(.isr_vector .isr_vector.*))
-		*(.text)
         *(.text*)
-		*(.rodata)
-		*(.rodata*)
-
-        KEEP(*(.init))
+		KEEP(*(.init))
         KEEP(*(.fini))
 
         /* .ctors */
@@ -61,6 +57,9 @@ SECTIONS
 		*(.ARM.exidx* .gnu.linkonce.armexidx.*)
     	__exidx_end = .;
 
+		*(.rodata*)
+
+        . = ALIGN(4);
 		_etext = .; 
     	__etext = .;
     } > FLASH
@@ -73,7 +72,6 @@ SECTIONS
 		_sdata = .;
         *(vtable)
         *(.data*)      
-    	*(.data.*) 
 
         . = ALIGN(4);
         /* preinit data */
@@ -107,7 +105,6 @@ SECTIONS
         . = ALIGN(4);
         __bss_start__ = .;
 		_sbss = .;
-        *(.bss)
         *(.bss*)
         *(COMMON)
         . = ALIGN(4);
