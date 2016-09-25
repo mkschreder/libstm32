@@ -163,8 +163,9 @@ void c_startup(void)
 	
 	//ConstructorsInit(); 
 
-	_start(); 
-	//main();
+	//_start(); 
+	// with no startup files we go directly to main 
+	main();
 }
 
 
