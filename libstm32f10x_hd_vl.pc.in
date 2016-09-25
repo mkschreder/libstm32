@@ -7,4 +7,4 @@ Name: libstm32f10x_hd_vl
 Description: STM32F10x support library
 Version: @VERSION@
 Cflags: 
-Libs: -L@libdir@ -lstartup_stm32f10x_hd_vl -Tstm32f10x_hd_vl.ld 
+Libs: -L@libdir@ -lstartup_stm32f10x_hd_vl -lstm32f10x -Tstm32f10x_hd_vl.ld 

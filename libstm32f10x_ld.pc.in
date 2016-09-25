@@ -7,4 +7,4 @@ Name: libstm32f10x_ld
 Description: STM32F10x support library
 Version: @VERSION@
 Cflags: 
-Libs: -L@libdir@ -lstartup_stm32f10x_ld -Tstm32f10x_ld.ld 
+Libs: -L@libdir@ -lstartup_stm32f10x_ld -lstm32f10x -Tstm32f10x_ld.ld 
