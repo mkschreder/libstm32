@@ -3,7 +3,7 @@ include_HEADERS=\
 stm32f10x.h \
 core_cm3.h \
 system_stm32f10x.h\
-stm32f10x_misc.h \
+misc.h \
 stm32f10x_adc.h \
 stm32f10x_bkp.h \
 stm32f10x_can.h \
@@ -40,7 +40,7 @@ libstm32f10x_xl.la
 COMMON_SOURCES=\
 system_stm32f10x.c \
 core_cm3.c \
-stm32f10x_misc.c \
+misc.c \
 stm32f10x_adc.c \
 stm32f10x_bkp.c \
 stm32f10x_can.c \
@@ -64,37 +64,39 @@ stm32f10x_tim.c \
 stm32f10x_usart.c \
 stm32f10x_wwdg.c 
 
+COMMON_CFLAGS=-DUSE_STDPERIPH_DRIVER -I../CMSIS/ -std=c99
+
 libstm32f10x_cl_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_cl.s
-libstm32f10x_cl_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_CL -I../CMSIS -std=c99 
+libstm32f10x_cl_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_CL
 
 libstm32f10x_hd_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_hd.s
-libstm32f10x_hd_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_HD -I../CMSIS -std=c99 
+libstm32f10x_hd_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_HD
 
 libstm32f10x_hd_vl_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_hd_vl.s
-libstm32f10x_hd_vl_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_HD_VL -I../CMSIS -std=c99 
+libstm32f10x_hd_vl_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_HD_VL 
 
 libstm32f10x_ld_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_ld.s
-libstm32f10x_ld_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_LD -I../CMSIS -std=c99 
+libstm32f10x_ld_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_LD
 
 libstm32f10x_ld_vl_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_ld_vl.s
-libstm32f10x_ld_vl_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_LD_VL -I../CMSIS -std=c99 
+libstm32f10x_ld_vl_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_LD_VL
 
 libstm32f10x_md_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_md.s
-libstm32f10x_md_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_MD -I../CMSIS -std=c99 
+libstm32f10x_md_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_MD 
 
 libstm32f10x_md_vl_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_md_vl.s
-libstm32f10x_md_vl_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_MD_VL -I../CMSIS -std=c99 
+libstm32f10x_md_vl_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_MD_VL
 
 libstm32f10x_xl_la_SOURCES=$(COMMON_SOURCES)\
 startup_stm32f10x_xl.s
-libstm32f10x_xl_la_CFLAGS=$(AM_CFLAGS) -DSTM32F10X_XL -I../CMSIS -std=c99 
+libstm32f10x_xl_la_CFLAGS=$(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_XL 
 
 libstm32f10x_ladir=$(prefix)/lib/
 libstm32f10x_la_DATA=\

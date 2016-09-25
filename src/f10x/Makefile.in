@@ -125,8 +125,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" \
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libstm32f10x_cl_la_LIBADD =
 am__objects_1 = libstm32f10x_cl_la-system_stm32f10x.lo \
-	libstm32f10x_cl_la-core_cm3.lo \
-	libstm32f10x_cl_la-stm32f10x_misc.lo \
+	libstm32f10x_cl_la-core_cm3.lo libstm32f10x_cl_la-misc.lo \
 	libstm32f10x_cl_la-stm32f10x_adc.lo \
 	libstm32f10x_cl_la-stm32f10x_bkp.lo \
 	libstm32f10x_cl_la-stm32f10x_can.lo \
@@ -162,8 +161,7 @@ libstm32f10x_cl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(LDFLAGS) -o $@
 libstm32f10x_hd_la_LIBADD =
 am__objects_2 = libstm32f10x_hd_la-system_stm32f10x.lo \
-	libstm32f10x_hd_la-core_cm3.lo \
-	libstm32f10x_hd_la-stm32f10x_misc.lo \
+	libstm32f10x_hd_la-core_cm3.lo libstm32f10x_hd_la-misc.lo \
 	libstm32f10x_hd_la-stm32f10x_adc.lo \
 	libstm32f10x_hd_la-stm32f10x_bkp.lo \
 	libstm32f10x_hd_la-stm32f10x_can.lo \
@@ -196,7 +194,7 @@ libstm32f10x_hd_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 libstm32f10x_hd_vl_la_LIBADD =
 am__objects_3 = libstm32f10x_hd_vl_la-system_stm32f10x.lo \
 	libstm32f10x_hd_vl_la-core_cm3.lo \
-	libstm32f10x_hd_vl_la-stm32f10x_misc.lo \
+	libstm32f10x_hd_vl_la-misc.lo \
 	libstm32f10x_hd_vl_la-stm32f10x_adc.lo \
 	libstm32f10x_hd_vl_la-stm32f10x_bkp.lo \
 	libstm32f10x_hd_vl_la-stm32f10x_can.lo \
@@ -228,8 +226,7 @@ libstm32f10x_hd_vl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(LDFLAGS) -o $@
 libstm32f10x_ld_la_LIBADD =
 am__objects_4 = libstm32f10x_ld_la-system_stm32f10x.lo \
-	libstm32f10x_ld_la-core_cm3.lo \
-	libstm32f10x_ld_la-stm32f10x_misc.lo \
+	libstm32f10x_ld_la-core_cm3.lo libstm32f10x_ld_la-misc.lo \
 	libstm32f10x_ld_la-stm32f10x_adc.lo \
 	libstm32f10x_ld_la-stm32f10x_bkp.lo \
 	libstm32f10x_ld_la-stm32f10x_can.lo \
@@ -262,7 +259,7 @@ libstm32f10x_ld_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 libstm32f10x_ld_vl_la_LIBADD =
 am__objects_5 = libstm32f10x_ld_vl_la-system_stm32f10x.lo \
 	libstm32f10x_ld_vl_la-core_cm3.lo \
-	libstm32f10x_ld_vl_la-stm32f10x_misc.lo \
+	libstm32f10x_ld_vl_la-misc.lo \
 	libstm32f10x_ld_vl_la-stm32f10x_adc.lo \
 	libstm32f10x_ld_vl_la-stm32f10x_bkp.lo \
 	libstm32f10x_ld_vl_la-stm32f10x_can.lo \
@@ -294,8 +291,7 @@ libstm32f10x_ld_vl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(LDFLAGS) -o $@
 libstm32f10x_md_la_LIBADD =
 am__objects_6 = libstm32f10x_md_la-system_stm32f10x.lo \
-	libstm32f10x_md_la-core_cm3.lo \
-	libstm32f10x_md_la-stm32f10x_misc.lo \
+	libstm32f10x_md_la-core_cm3.lo libstm32f10x_md_la-misc.lo \
 	libstm32f10x_md_la-stm32f10x_adc.lo \
 	libstm32f10x_md_la-stm32f10x_bkp.lo \
 	libstm32f10x_md_la-stm32f10x_can.lo \
@@ -328,7 +324,7 @@ libstm32f10x_md_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 libstm32f10x_md_vl_la_LIBADD =
 am__objects_7 = libstm32f10x_md_vl_la-system_stm32f10x.lo \
 	libstm32f10x_md_vl_la-core_cm3.lo \
-	libstm32f10x_md_vl_la-stm32f10x_misc.lo \
+	libstm32f10x_md_vl_la-misc.lo \
 	libstm32f10x_md_vl_la-stm32f10x_adc.lo \
 	libstm32f10x_md_vl_la-stm32f10x_bkp.lo \
 	libstm32f10x_md_vl_la-stm32f10x_can.lo \
@@ -360,8 +356,7 @@ libstm32f10x_md_vl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(LDFLAGS) -o $@
 libstm32f10x_xl_la_LIBADD =
 am__objects_8 = libstm32f10x_xl_la-system_stm32f10x.lo \
-	libstm32f10x_xl_la-core_cm3.lo \
-	libstm32f10x_xl_la-stm32f10x_misc.lo \
+	libstm32f10x_xl_la-core_cm3.lo libstm32f10x_xl_la-misc.lo \
 	libstm32f10x_xl_la-stm32f10x_adc.lo \
 	libstm32f10x_xl_la-stm32f10x_bkp.lo \
 	libstm32f10x_xl_la-stm32f10x_can.lo \
@@ -600,7 +595,7 @@ include_HEADERS = \
 stm32f10x.h \
 core_cm3.h \
 system_stm32f10x.h\
-stm32f10x_misc.h \
+misc.h \
 stm32f10x_adc.h \
 stm32f10x_bkp.h \
 stm32f10x_can.h \
@@ -637,7 +632,7 @@ libstm32f10x_xl.la
 COMMON_SOURCES = \
 system_stm32f10x.c \
 core_cm3.c \
-stm32f10x_misc.c \
+misc.c \
 stm32f10x_adc.c \
 stm32f10x_bkp.c \
 stm32f10x_can.c \
@@ -661,38 +656,39 @@ stm32f10x_tim.c \
 stm32f10x_usart.c \
 stm32f10x_wwdg.c 
 
+COMMON_CFLAGS = -DUSE_STDPERIPH_DRIVER -I../CMSIS/ -std=c99
 libstm32f10x_cl_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_cl.s
 
-libstm32f10x_cl_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_CL -I../CMSIS -std=c99 
+libstm32f10x_cl_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_CL
 libstm32f10x_hd_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_hd.s
 
-libstm32f10x_hd_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_HD -I../CMSIS -std=c99 
+libstm32f10x_hd_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_HD
 libstm32f10x_hd_vl_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_hd_vl.s
 
-libstm32f10x_hd_vl_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_HD_VL -I../CMSIS -std=c99 
+libstm32f10x_hd_vl_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_HD_VL 
 libstm32f10x_ld_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_ld.s
 
-libstm32f10x_ld_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_LD -I../CMSIS -std=c99 
+libstm32f10x_ld_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_LD
 libstm32f10x_ld_vl_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_ld_vl.s
 
-libstm32f10x_ld_vl_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_LD_VL -I../CMSIS -std=c99 
+libstm32f10x_ld_vl_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_LD_VL
 libstm32f10x_md_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_md.s
 
-libstm32f10x_md_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_MD -I../CMSIS -std=c99 
+libstm32f10x_md_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_MD 
 libstm32f10x_md_vl_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_md_vl.s
 
-libstm32f10x_md_vl_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_MD_VL -I../CMSIS -std=c99 
+libstm32f10x_md_vl_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_MD_VL
 libstm32f10x_xl_la_SOURCES = $(COMMON_SOURCES)\
 startup_stm32f10x_xl.s
 
-libstm32f10x_xl_la_CFLAGS = $(AM_CFLAGS) -DSTM32F10X_XL -I../CMSIS -std=c99 
+libstm32f10x_xl_la_CFLAGS = $(AM_CFLAGS) $(COMMON_CFLAGS) -DSTM32F10X_XL 
 libstm32f10x_ladir = $(prefix)/lib/
 libstm32f10x_la_DATA = \
 	stm32f10x.ld\
@@ -800,6 +796,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_can.Plo@am__quote@
@@ -814,7 +811,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_rtc.Plo@am__quote@
@@ -825,6 +821,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_cl_la-system_stm32f10x.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_can.Plo@am__quote@
@@ -839,7 +836,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_rtc.Plo@am__quote@
@@ -850,6 +846,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_la-system_stm32f10x.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_can.Plo@am__quote@
@@ -864,7 +861,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_rtc.Plo@am__quote@
@@ -875,6 +871,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_hd_vl_la-system_stm32f10x.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_can.Plo@am__quote@
@@ -889,7 +886,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_rtc.Plo@am__quote@
@@ -900,6 +896,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_la-system_stm32f10x.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_can.Plo@am__quote@
@@ -914,7 +911,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_rtc.Plo@am__quote@
@@ -925,6 +921,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_ld_vl_la-system_stm32f10x.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_can.Plo@am__quote@
@@ -939,7 +936,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_rtc.Plo@am__quote@
@@ -950,6 +946,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_la-system_stm32f10x.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_can.Plo@am__quote@
@@ -964,7 +961,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_rtc.Plo@am__quote@
@@ -975,6 +971,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_wwdg.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_md_vl_la-system_stm32f10x.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-core_cm3.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_bkp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_can.Plo@am__quote@
@@ -989,7 +986,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_rcc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f10x_xl_la-stm32f10x_rtc.Plo@am__quote@
@@ -1038,12 +1034,12 @@ libstm32f10x_cl_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_cl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_cl_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_cl_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_cl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_cl_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_cl_la-stm32f10x_misc.Tpo -c -o libstm32f10x_cl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_cl_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_cl_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_cl_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_cl_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_cl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_cl_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_cl_la-misc.Tpo -c -o libstm32f10x_cl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_cl_la-misc.Tpo $(DEPDIR)/libstm32f10x_cl_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_cl_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_cl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_cl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_cl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_cl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_cl_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_cl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_cl_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_cl_la-stm32f10x_adc.Tpo -c -o libstm32f10x_cl_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c
@@ -1213,12 +1209,12 @@ libstm32f10x_hd_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_hd_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_hd_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_hd_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_hd_la-stm32f10x_misc.Tpo -c -o libstm32f10x_hd_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_hd_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_hd_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_hd_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_hd_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_hd_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_hd_la-misc.Tpo -c -o libstm32f10x_hd_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_hd_la-misc.Tpo $(DEPDIR)/libstm32f10x_hd_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_hd_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_hd_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_hd_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_hd_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_hd_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_hd_la-stm32f10x_adc.Tpo -c -o libstm32f10x_hd_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c
@@ -1388,12 +1384,12 @@ libstm32f10x_hd_vl_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_hd_vl_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_hd_vl_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_hd_vl_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_misc.Tpo -c -o libstm32f10x_hd_vl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_hd_vl_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_hd_vl_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_hd_vl_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_hd_vl_la-misc.Tpo -c -o libstm32f10x_hd_vl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_hd_vl_la-misc.Tpo $(DEPDIR)/libstm32f10x_hd_vl_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_hd_vl_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_hd_vl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_hd_vl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_hd_vl_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_hd_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_hd_vl_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_hd_vl_la-stm32f10x_adc.Tpo -c -o libstm32f10x_hd_vl_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c
@@ -1563,12 +1559,12 @@ libstm32f10x_ld_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_ld_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_ld_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_ld_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_ld_la-stm32f10x_misc.Tpo -c -o libstm32f10x_ld_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_ld_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_ld_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_ld_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_ld_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_ld_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_ld_la-misc.Tpo -c -o libstm32f10x_ld_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_ld_la-misc.Tpo $(DEPDIR)/libstm32f10x_ld_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_ld_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_ld_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_ld_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_ld_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_ld_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_ld_la-stm32f10x_adc.Tpo -c -o libstm32f10x_ld_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c
@@ -1738,12 +1734,12 @@ libstm32f10x_ld_vl_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_ld_vl_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_ld_vl_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_ld_vl_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_misc.Tpo -c -o libstm32f10x_ld_vl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_ld_vl_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_ld_vl_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_ld_vl_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_ld_vl_la-misc.Tpo -c -o libstm32f10x_ld_vl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_ld_vl_la-misc.Tpo $(DEPDIR)/libstm32f10x_ld_vl_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_ld_vl_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_ld_vl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_ld_vl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_ld_vl_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_ld_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_ld_vl_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_ld_vl_la-stm32f10x_adc.Tpo -c -o libstm32f10x_ld_vl_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c
@@ -1913,12 +1909,12 @@ libstm32f10x_md_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_md_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_md_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_md_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_md_la-stm32f10x_misc.Tpo -c -o libstm32f10x_md_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_md_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_md_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_md_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_md_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_md_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_md_la-misc.Tpo -c -o libstm32f10x_md_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_md_la-misc.Tpo $(DEPDIR)/libstm32f10x_md_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_md_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_md_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_md_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_md_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_md_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_md_la-stm32f10x_adc.Tpo -c -o libstm32f10x_md_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c
@@ -2088,12 +2084,12 @@ libstm32f10x_md_vl_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_md_vl_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_md_vl_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_md_vl_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_misc.Tpo -c -o libstm32f10x_md_vl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_md_vl_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_md_vl_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_md_vl_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_md_vl_la-misc.Tpo -c -o libstm32f10x_md_vl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_md_vl_la-misc.Tpo $(DEPDIR)/libstm32f10x_md_vl_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_md_vl_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_md_vl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_vl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_md_vl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_md_vl_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_md_vl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_md_vl_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_md_vl_la-stm32f10x_adc.Tpo -c -o libstm32f10x_md_vl_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c
@@ -2263,12 +2259,12 @@ libstm32f10x_xl_la-core_cm3.lo: core_cm3.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_xl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_xl_la-core_cm3.lo `test -f 'core_cm3.c' || echo '$(srcdir)/'`core_cm3.c
 
-libstm32f10x_xl_la-stm32f10x_misc.lo: stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_xl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_xl_la-stm32f10x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_xl_la-stm32f10x_misc.Tpo -c -o libstm32f10x_xl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_xl_la-stm32f10x_misc.Tpo $(DEPDIR)/libstm32f10x_xl_la-stm32f10x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f10x_misc.c' object='libstm32f10x_xl_la-stm32f10x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f10x_xl_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_xl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_xl_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_xl_la-misc.Tpo -c -o libstm32f10x_xl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f10x_xl_la-misc.Tpo $(DEPDIR)/libstm32f10x_xl_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f10x_xl_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_xl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_xl_la-stm32f10x_misc.lo `test -f 'stm32f10x_misc.c' || echo '$(srcdir)/'`stm32f10x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_xl_la_CFLAGS) $(CFLAGS) -c -o libstm32f10x_xl_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f10x_xl_la-stm32f10x_adc.lo: stm32f10x_adc.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f10x_xl_la_CFLAGS) $(CFLAGS) -MT libstm32f10x_xl_la-stm32f10x_adc.lo -MD -MP -MF $(DEPDIR)/libstm32f10x_xl_la-stm32f10x_adc.Tpo -c -o libstm32f10x_xl_la-stm32f10x_adc.lo `test -f 'stm32f10x_adc.c' || echo '$(srcdir)/'`stm32f10x_adc.c

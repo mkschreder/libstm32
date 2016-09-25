@@ -2,26 +2,20 @@
   ******************************************************************************
   * @file    stm32f10x_spi.c
   * @author  MCD Application Team
-  * @version V3.6.1
-  * @date    05-March-2012
+  * @version V3.5.0
+  * @date    11-March-2011
   * @brief   This file provides all the SPI firmware functions.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
+  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
   *
-  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
-  * You may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at:
-  *
-  *        http://www.st.com/software_license_agreement_liberty_v2
-  *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  *
+  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
   ******************************************************************************
   */
 
@@ -267,10 +261,6 @@ void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
       packetlength = 2;
     }
 
-    /* Check the I2S clock source configuration depending on the Device:
-       Only Connectivity line devices have the PLL3 VCO clock */
-#ifdef STM32F10X_CL
-		
     /* Get the I2S clock source mask depending on the peripheral number */
     if(((uint32_t)SPIx) == SPI2_BASE)
     {
@@ -283,6 +273,9 @@ void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
       tmp = I2S3_CLOCK_SRC;
     }
 
+    /* Check the I2S clock source configuration depending on the Device:
+       Only Connectivity line devices have the PLL3 VCO clock */
+#ifdef STM32F10X_CL
     if((RCC->CFGR2 & tmp) != 0)
     {
       /* Get the configuration bits of RCC PLL3 multiplier */
@@ -912,4 +905,4 @@ void SPI_I2S_ClearITPendingBit(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
   * @}
   */ 
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
