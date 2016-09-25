@@ -6,5 +6,5 @@ libdir=@libdir@
 Name: libstm32f10x_cl
 Description: STM32F10x support library
 Version: @VERSION@
-Cflags: -I@includedir@/stm32/f10x/ 
+Cflags: -DSTM32F10X_CL -I@includedir@/stm32/f10x/ 
 Libs: -L@libdir@ -lstm32f10x_cl -Tstm32f10x_cl.ld 
