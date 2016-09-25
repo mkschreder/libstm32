@@ -285,6 +285,7 @@ mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
 pdfdir = @pdfdir@
+pkgconfigdir = @pkgconfigdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
 psdir = @psdir@
@@ -303,7 +304,7 @@ AM_CFLAGS = $(CODE_COVERAGE_CFLAGS) -std=gnu99 -Wall -Werror -Wno-format-y2k -W 
 -Wformat=2 -Wno-format-nonliteral -Wpointer-arith -Wno-missing-braces \
 -Wno-unused-parameter -Wno-unused-variable -Wno-inline
 
-SUBDIRS = f10x f30x f37x l1xx
+SUBDIRS = f10x f30x f37x l1xx CMSIS
 all: all-recursive
 
 .SUFFIXES:

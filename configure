@@ -636,6 +636,7 @@ ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIBOBJS
+pkgconfigdir
 am__fastdepCCAS_FALSE
 am__fastdepCCAS_TRUE
 CCASDEPMODE
@@ -779,6 +780,7 @@ enable_dependency_tracking
 with_gnu_ld
 with_sysroot
 enable_libtool_lock
+with_pkgconfigdir
 '
       ac_precious_vars='build_alias
 host_alias
@@ -1431,6 +1433,8 @@ Optional Packages:
   --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
   --with-sysroot=DIR Search for dependent libraries within DIR
                         (or the compiler's sysroot if not specified).
+  --with-pkgconfigdir     Use the specified pkgconfig dir (default is
+                          libdir/pkgconfig)
 
 Some influential environment variables:
   CC          C compiler command
@@ -12711,10 +12715,22 @@ fi
 
 
 
-ac_config_files="$ac_config_files libstm32f10x.pc libstm32f10x_cl.pc libstm32f10x_hd.pc libstm32f10x_hd_vl.pc libstm32f10x_ld.pc libstm32f10x_ld_vl.pc libstm32f10x_md.pc libstm32f10x_md_vl.pc libstm32f30x.pc libstm32f37x.pc libstm32l1xx.pc"
+
+# Check whether --with-pkgconfigdir was given.
+if test "${with_pkgconfigdir+set}" = set; then :
+  withval=$with_pkgconfigdir; pkgconfigdir=${withval}
+else
+  pkgconfigdir='${libdir}/pkgconfig'
+fi
 
 
-ac_config_files="$ac_config_files Makefile src/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/l1xx/Makefile"
+{ $as_echo "$as_me:${as_lineno-$LINENO}: pkgconfig directory is ${pkgconfigdir}" >&5
+$as_echo "$as_me: pkgconfig directory is ${pkgconfigdir}" >&6;}
+
+ac_config_files="$ac_config_files libstm32f10x_cl.pc libstm32f10x_hd.pc libstm32f10x_hd_vl.pc libstm32f10x_ld.pc libstm32f10x_ld_vl.pc libstm32f10x_md.pc libstm32f10x_md_vl.pc libstm32f30x.pc libstm32f37x.pc libstm32l1xx.pc"
+
+
+ac_config_files="$ac_config_files Makefile src/Makefile src/CMSIS/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/l1xx/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -13748,7 +13764,6 @@ do
   case $ac_config_target in
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
-    "libstm32f10x.pc") CONFIG_FILES="$CONFIG_FILES libstm32f10x.pc" ;;
     "libstm32f10x_cl.pc") CONFIG_FILES="$CONFIG_FILES libstm32f10x_cl.pc" ;;
     "libstm32f10x_hd.pc") CONFIG_FILES="$CONFIG_FILES libstm32f10x_hd.pc" ;;
     "libstm32f10x_hd_vl.pc") CONFIG_FILES="$CONFIG_FILES libstm32f10x_hd_vl.pc" ;;
@@ -13761,6 +13776,7 @@ do
     "libstm32l1xx.pc") CONFIG_FILES="$CONFIG_FILES libstm32l1xx.pc" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+    "src/CMSIS/Makefile") CONFIG_FILES="$CONFIG_FILES src/CMSIS/Makefile" ;;
     "src/f10x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f10x/Makefile" ;;
     "src/f30x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f30x/Makefile" ;;
     "src/f37x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f37x/Makefile" ;;
