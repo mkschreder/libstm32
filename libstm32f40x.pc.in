@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+includedir=@includedir@
+libdir=@libdir@
+
+Name: libstm32f40x
+Description: STM32F40x support library
+Version: @VERSION@
+Cflags: -I@includedir@/stm32/f40x/ -I@includedir@/stm32/CMSIS/
+Libs: -L@libdir@ -lstm32f40x
