@@ -26,7 +26,8 @@ stm32f4xx_spi.h \
 stm32f4xx_syscfg.h \
 stm32f4xx_tim.h \
 stm32f4xx_usart.h \
-stm32f4xx_wwdg.h 
+stm32f4xx_wwdg.h \
+system_stm32f4xx.h 
 
 lib_LTLIBRARIES=libstm32f4xx.la 
 
@@ -64,6 +65,7 @@ stm32f4xx_syscfg.c \
 stm32f4xx_tim.c \
 stm32f4xx_usart.c \
 stm32f4xx_wwdg.c \
+system_stm32f4xx.c \
 startup_stm32f4xx.s  
 
 libstm32f4xx_la_CFLAGS=$(AM_CFLAGS) -DSTM32F4XX -I../CMSIS -std=c99 

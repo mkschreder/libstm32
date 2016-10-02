@@ -146,7 +146,8 @@ am_libstm32f4xx_la_OBJECTS = libstm32f4xx_la-misc.lo \
 	libstm32f4xx_la-stm32f4xx_syscfg.lo \
 	libstm32f4xx_la-stm32f4xx_tim.lo \
 	libstm32f4xx_la-stm32f4xx_usart.lo \
-	libstm32f4xx_la-stm32f4xx_wwdg.lo startup_stm32f4xx.lo
+	libstm32f4xx_la-stm32f4xx_wwdg.lo \
+	libstm32f4xx_la-system_stm32f4xx.lo startup_stm32f4xx.lo
 libstm32f4xx_la_OBJECTS = $(am_libstm32f4xx_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -380,7 +381,8 @@ stm32f4xx_spi.h \
 stm32f4xx_syscfg.h \
 stm32f4xx_tim.h \
 stm32f4xx_usart.h \
-stm32f4xx_wwdg.h 
+stm32f4xx_wwdg.h \
+system_stm32f4xx.h 
 
 lib_LTLIBRARIES = libstm32f4xx.la 
 
@@ -417,6 +419,7 @@ stm32f4xx_syscfg.c \
 stm32f4xx_tim.c \
 stm32f4xx_usart.c \
 stm32f4xx_wwdg.c \
+system_stm32f4xx.c \
 startup_stm32f4xx.s  
 
 libstm32f4xx_la_CFLAGS = $(AM_CFLAGS) -DSTM32F4XX -I../CMSIS -std=c99 
@@ -524,6 +527,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f4xx_la-stm32f4xx_tim.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f4xx_la-stm32f4xx_usart.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f4xx_la-stm32f4xx_wwdg.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f4xx_la-system_stm32f4xx.Plo@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -723,6 +727,13 @@ libstm32f4xx_la-stm32f4xx_wwdg.lo: stm32f4xx_wwdg.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f4xx_wwdg.c' object='libstm32f4xx_la-stm32f4xx_wwdg.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f4xx_la_CFLAGS) $(CFLAGS) -c -o libstm32f4xx_la-stm32f4xx_wwdg.lo `test -f 'stm32f4xx_wwdg.c' || echo '$(srcdir)/'`stm32f4xx_wwdg.c
+
+libstm32f4xx_la-system_stm32f4xx.lo: system_stm32f4xx.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f4xx_la_CFLAGS) $(CFLAGS) -MT libstm32f4xx_la-system_stm32f4xx.lo -MD -MP -MF $(DEPDIR)/libstm32f4xx_la-system_stm32f4xx.Tpo -c -o libstm32f4xx_la-system_stm32f4xx.lo `test -f 'system_stm32f4xx.c' || echo '$(srcdir)/'`system_stm32f4xx.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f4xx_la-system_stm32f4xx.Tpo $(DEPDIR)/libstm32f4xx_la-system_stm32f4xx.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='system_stm32f4xx.c' object='libstm32f4xx_la-system_stm32f4xx.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f4xx_la_CFLAGS) $(CFLAGS) -c -o libstm32f4xx_la-system_stm32f4xx.lo `test -f 'system_stm32f4xx.c' || echo '$(srcdir)/'`system_stm32f4xx.c
 
 .s.o:
 	$(AM_V_CCAS)$(CCASCOMPILE) -c -o $@ $<
