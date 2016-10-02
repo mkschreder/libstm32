@@ -1,6 +1,7 @@
 includedir=$(prefix)/include/stm32/f4xx/
 include_HEADERS=\
 misc.h \
+stm32f4xx_conf.h \
 stm32f4xx_adc.h \
 stm32f4xx_can.h \
 stm32f4xx_crc.h \

@@ -347,6 +347,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 include_HEADERS = \
 misc.h \
+stm32f4xx_conf.h \
 stm32f4xx_adc.h \
 stm32f4xx_can.h \
 stm32f4xx_crc.h \
