@@ -146,7 +146,7 @@ am_libstm32f4xx_la_OBJECTS = libstm32f4xx_la-misc.lo \
 	libstm32f4xx_la-stm32f4xx_syscfg.lo \
 	libstm32f4xx_la-stm32f4xx_tim.lo \
 	libstm32f4xx_la-stm32f4xx_usart.lo \
-	libstm32f4xx_la-stm32f4xx_wwdg.lo
+	libstm32f4xx_la-stm32f4xx_wwdg.lo startup_stm32f4xx.lo
 libstm32f4xx_la_OBJECTS = $(am_libstm32f4xx_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -190,6 +190,14 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
+CCASCOMPILE = $(CCAS) $(AM_CCASFLAGS) $(CCASFLAGS)
+LTCCASCOMPILE = $(LIBTOOL) $(AM_V_lt) $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CCAS) $(AM_CCASFLAGS) \
+	$(CCASFLAGS)
+AM_V_CCAS = $(am__v_CCAS_@AM_V@)
+am__v_CCAS_ = $(am__v_CCAS_@AM_DEFAULT_V@)
+am__v_CCAS_0 = @echo "  CCAS    " $@;
+am__v_CCAS_1 = 
 SOURCES = $(libstm32f4xx_la_SOURCES)
 DIST_SOURCES = $(libstm32f4xx_la_SOURCES)
 am__can_run_installinfo = \
@@ -408,13 +416,14 @@ stm32f4xx_spi.c \
 stm32f4xx_syscfg.c \
 stm32f4xx_tim.c \
 stm32f4xx_usart.c \
-stm32f4xx_wwdg.c 
+stm32f4xx_wwdg.c \
+startup_stm32f4xx.s  
 
 libstm32f4xx_la_CFLAGS = $(AM_CFLAGS) -DSTM32F4XX -I../CMSIS -std=c99 
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .c .lo .o .obj
+.SUFFIXES: .c .lo .o .obj .s
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -714,6 +723,15 @@ libstm32f4xx_la-stm32f4xx_wwdg.lo: stm32f4xx_wwdg.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f4xx_wwdg.c' object='libstm32f4xx_la-stm32f4xx_wwdg.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f4xx_la_CFLAGS) $(CFLAGS) -c -o libstm32f4xx_la-stm32f4xx_wwdg.lo `test -f 'stm32f4xx_wwdg.c' || echo '$(srcdir)/'`stm32f4xx_wwdg.c
+
+.s.o:
+	$(AM_V_CCAS)$(CCASCOMPILE) -c -o $@ $<
+
+.s.obj:
+	$(AM_V_CCAS)$(CCASCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.s.lo:
+	$(AM_V_CCAS)$(LTCCASCOMPILE) -c -o $@ $<
 
 mostlyclean-libtool:
 	-rm -f *.lo

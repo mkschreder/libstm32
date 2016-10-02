@@ -63,7 +63,8 @@ stm32f4xx_spi.c \
 stm32f4xx_syscfg.c \
 stm32f4xx_tim.c \
 stm32f4xx_usart.c \
-stm32f4xx_wwdg.c 
+stm32f4xx_wwdg.c \
+startup_stm32f4xx.s  
 
 libstm32f4xx_la_CFLAGS=$(AM_CFLAGS) -DSTM32F4XX -I../CMSIS -std=c99 
 
