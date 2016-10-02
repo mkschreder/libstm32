@@ -32,8 +32,8 @@ AC_CONFIG_FILES([\
 	libstm32f10x_md_vl.pc \
 	libstm32f30x.pc \
 	libstm32f37x.pc \
-	libstm32f40x.pc \
+	libstm32f4xx.pc \
 	libstm32l1xx.pc])
 
-AC_OUTPUT(Makefile src/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/f40x/Makefile src/l1xx/Makefile)
+AC_OUTPUT(Makefile src/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/f4xx/Makefile src/l1xx/Makefile)
 

@@ -12,7 +12,7 @@ stm32f30x_flash.h \
 stm32f30x_gpio.h \
 stm32f30x_i2c.h \
 stm32f30x_iwdg.h \
-stm32f30x_misc.h \
+misc.h \
 stm32f30x_opamp.h \
 stm32f30x_pwr.h \
 stm32f30x_rcc.h \
@@ -39,7 +39,7 @@ stm32f30x_flash.c \
 stm32f30x_gpio.c \
 stm32f30x_i2c.c \
 stm32f30x_iwdg.c \
-stm32f30x_misc.c \
+misc.c \
 stm32f30x_opamp.c \
 stm32f30x_pwr.c \
 stm32f30x_rcc.c \

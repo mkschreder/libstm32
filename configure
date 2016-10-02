@@ -12727,10 +12727,10 @@ fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: pkgconfig directory is ${pkgconfigdir}" >&5
 $as_echo "$as_me: pkgconfig directory is ${pkgconfigdir}" >&6;}
 
-ac_config_files="$ac_config_files libstm32f10x_cl.pc libstm32f10x_hd.pc libstm32f10x_hd_vl.pc libstm32f10x_ld.pc libstm32f10x_ld_vl.pc libstm32f10x_md.pc libstm32f10x_md_vl.pc libstm32f30x.pc libstm32f37x.pc libstm32f40x.pc libstm32l1xx.pc"
+ac_config_files="$ac_config_files libstm32f10x_cl.pc libstm32f10x_hd.pc libstm32f10x_hd_vl.pc libstm32f10x_ld.pc libstm32f10x_ld_vl.pc libstm32f10x_md.pc libstm32f10x_md_vl.pc libstm32f30x.pc libstm32f37x.pc libstm32f4xx.pc libstm32l1xx.pc"
 
 
-ac_config_files="$ac_config_files Makefile src/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/f40x/Makefile src/l1xx/Makefile"
+ac_config_files="$ac_config_files Makefile src/Makefile src/f10x/Makefile src/f30x/Makefile src/f37x/Makefile src/f4xx/Makefile src/l1xx/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -13773,14 +13773,14 @@ do
     "libstm32f10x_md_vl.pc") CONFIG_FILES="$CONFIG_FILES libstm32f10x_md_vl.pc" ;;
     "libstm32f30x.pc") CONFIG_FILES="$CONFIG_FILES libstm32f30x.pc" ;;
     "libstm32f37x.pc") CONFIG_FILES="$CONFIG_FILES libstm32f37x.pc" ;;
-    "libstm32f40x.pc") CONFIG_FILES="$CONFIG_FILES libstm32f40x.pc" ;;
+    "libstm32f4xx.pc") CONFIG_FILES="$CONFIG_FILES libstm32f4xx.pc" ;;
     "libstm32l1xx.pc") CONFIG_FILES="$CONFIG_FILES libstm32l1xx.pc" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "src/f10x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f10x/Makefile" ;;
     "src/f30x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f30x/Makefile" ;;
     "src/f37x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f37x/Makefile" ;;
-    "src/f40x/Makefile") CONFIG_FILES="$CONFIG_FILES src/f40x/Makefile" ;;
+    "src/f4xx/Makefile") CONFIG_FILES="$CONFIG_FILES src/f4xx/Makefile" ;;
     "src/l1xx/Makefile") CONFIG_FILES="$CONFIG_FILES src/l1xx/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;

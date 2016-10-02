@@ -54,10 +54,6 @@
 #ifndef __STM32L1XX_H
 #define __STM32L1XX_H
 
-#ifndef assert_param
-#define assert_param(x) ((void)0)
-#endif
-
 #ifdef __cplusplus
  extern "C" {
 #endif 

@@ -10,7 +10,7 @@ libstm32f10x_md.pc\
 libstm32f10x_md_vl.pc\
 libstm32f30x.pc\
 libstm32f37x.pc\
-libstm32f40x.pc\
+libstm32f4xx.pc\
 libstm32l1xx.pc
 SUBDIRS=src 
 EXTRA_DIST=autogen.mk

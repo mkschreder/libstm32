@@ -5,4 +5,4 @@ AM_CFLAGS=$(CODE_COVERAGE_CFLAGS) -std=gnu99 -Wall -Werror -Wno-format-y2k -W -W
 -Wformat=2 -Wno-format-nonliteral -Wpointer-arith -Wno-missing-braces \
 -Wno-unused-parameter -Wno-unused-variable -Wno-inline
 
-SUBDIRS=f10x f30x f37x f40x l1xx
+SUBDIRS=f10x f30x f37x f4xx l1xx

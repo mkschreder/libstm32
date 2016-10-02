@@ -90,7 +90,7 @@ DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(srcdir)/libstm32f10x_md.pc.in \
 	$(srcdir)/libstm32f10x_md_vl.pc.in \
 	$(srcdir)/libstm32f30x.pc.in $(srcdir)/libstm32f37x.pc.in \
-	$(srcdir)/libstm32f40x.pc.in $(srcdir)/libstm32l1xx.pc.in \
+	$(srcdir)/libstm32f4xx.pc.in $(srcdir)/libstm32l1xx.pc.in \
 	COPYING config/compile config/config.guess config/config.sub \
 	config/depcomp config/install-sh config/missing \
 	config/ltmain.sh $(top_srcdir)/config/compile \
@@ -111,7 +111,7 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES = libstm32f10x_cl.pc libstm32f10x_hd.pc \
 	libstm32f10x_hd_vl.pc libstm32f10x_ld.pc libstm32f10x_ld_vl.pc \
 	libstm32f10x_md.pc libstm32f10x_md_vl.pc libstm32f30x.pc \
-	libstm32f37x.pc libstm32f40x.pc libstm32l1xx.pc
+	libstm32f37x.pc libstm32f4xx.pc libstm32l1xx.pc
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -378,7 +378,7 @@ libstm32f10x_md.pc\
 libstm32f10x_md_vl.pc\
 libstm32f30x.pc\
 libstm32f37x.pc\
-libstm32f40x.pc\
+libstm32f4xx.pc\
 libstm32l1xx.pc
 
 SUBDIRS = src 
@@ -438,7 +438,7 @@ libstm32f30x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f30x.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 libstm32f37x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f37x.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-libstm32f40x.pc: $(top_builddir)/config.status $(srcdir)/libstm32f40x.pc.in
+libstm32f4xx.pc: $(top_builddir)/config.status $(srcdir)/libstm32f4xx.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 libstm32l1xx.pc: $(top_builddir)/config.status $(srcdir)/libstm32l1xx.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@

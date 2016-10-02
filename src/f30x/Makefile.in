@@ -134,8 +134,7 @@ am_libstm32f30x_la_OBJECTS = startup_stm32f30x.lo \
 	libstm32f30x_la-stm32f30x_flash.lo \
 	libstm32f30x_la-stm32f30x_gpio.lo \
 	libstm32f30x_la-stm32f30x_i2c.lo \
-	libstm32f30x_la-stm32f30x_iwdg.lo \
-	libstm32f30x_la-stm32f30x_misc.lo \
+	libstm32f30x_la-stm32f30x_iwdg.lo libstm32f30x_la-misc.lo \
 	libstm32f30x_la-stm32f30x_opamp.lo \
 	libstm32f30x_la-stm32f30x_pwr.lo \
 	libstm32f30x_la-stm32f30x_rcc.lo \
@@ -366,7 +365,7 @@ stm32f30x_flash.h \
 stm32f30x_gpio.h \
 stm32f30x_i2c.h \
 stm32f30x_iwdg.h \
-stm32f30x_misc.h \
+misc.h \
 stm32f30x_opamp.h \
 stm32f30x_pwr.h \
 stm32f30x_rcc.h \
@@ -392,7 +391,7 @@ stm32f30x_flash.c \
 stm32f30x_gpio.c \
 stm32f30x_i2c.c \
 stm32f30x_iwdg.c \
-stm32f30x_misc.c \
+misc.c \
 stm32f30x_opamp.c \
 stm32f30x_pwr.c \
 stm32f30x_rcc.c \
@@ -483,6 +482,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_adc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_can.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_comp.Plo@am__quote@
@@ -495,7 +495,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_gpio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_i2c.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_iwdg.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_opamp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_pwr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libstm32f30x_la-stm32f30x_rcc.Plo@am__quote@
@@ -639,12 +638,12 @@ libstm32f30x_la-stm32f30x_iwdg.lo: stm32f30x_iwdg.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f30x_la_CFLAGS) $(CFLAGS) -c -o libstm32f30x_la-stm32f30x_iwdg.lo `test -f 'stm32f30x_iwdg.c' || echo '$(srcdir)/'`stm32f30x_iwdg.c
 
-libstm32f30x_la-stm32f30x_misc.lo: stm32f30x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f30x_la_CFLAGS) $(CFLAGS) -MT libstm32f30x_la-stm32f30x_misc.lo -MD -MP -MF $(DEPDIR)/libstm32f30x_la-stm32f30x_misc.Tpo -c -o libstm32f30x_la-stm32f30x_misc.lo `test -f 'stm32f30x_misc.c' || echo '$(srcdir)/'`stm32f30x_misc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f30x_la-stm32f30x_misc.Tpo $(DEPDIR)/libstm32f30x_la-stm32f30x_misc.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='stm32f30x_misc.c' object='libstm32f30x_la-stm32f30x_misc.lo' libtool=yes @AMDEPBACKSLASH@
+libstm32f30x_la-misc.lo: misc.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f30x_la_CFLAGS) $(CFLAGS) -MT libstm32f30x_la-misc.lo -MD -MP -MF $(DEPDIR)/libstm32f30x_la-misc.Tpo -c -o libstm32f30x_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libstm32f30x_la-misc.Tpo $(DEPDIR)/libstm32f30x_la-misc.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='misc.c' object='libstm32f30x_la-misc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f30x_la_CFLAGS) $(CFLAGS) -c -o libstm32f30x_la-stm32f30x_misc.lo `test -f 'stm32f30x_misc.c' || echo '$(srcdir)/'`stm32f30x_misc.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f30x_la_CFLAGS) $(CFLAGS) -c -o libstm32f30x_la-misc.lo `test -f 'misc.c' || echo '$(srcdir)/'`misc.c
 
 libstm32f30x_la-stm32f30x_opamp.lo: stm32f30x_opamp.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libstm32f30x_la_CFLAGS) $(CFLAGS) -MT libstm32f30x_la-stm32f30x_opamp.lo -MD -MP -MF $(DEPDIR)/libstm32f30x_la-stm32f30x_opamp.Tpo -c -o libstm32f30x_la-stm32f30x_opamp.lo `test -f 'stm32f30x_opamp.c' || echo '$(srcdir)/'`stm32f30x_opamp.c
