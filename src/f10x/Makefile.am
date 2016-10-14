@@ -25,7 +25,8 @@ stm32f10x_sdio.h \
 stm32f10x_spi.h \
 stm32f10x_tim.h \
 stm32f10x_usart.h \
-stm32f10x_wwdg.h 
+stm32f10x_wwdg.h \
+stm32f10x_conf.h
 
 lib_LTLIBRARIES=\
 libstm32f10x_cl.la \
